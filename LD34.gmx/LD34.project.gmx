@@ -10,13 +10,17 @@
     <sprite>sprites\sprite_arm</sprite>
     <sprite>sprites\sprite_wall</sprite>
     <sprite>sprites\sprite_torch</sprite>
-    <sprite>sprites\sprite_ground_1</sprite>
-    <sprite>sprites\sprite_ground_2</sprite>
-    <sprite>sprites\sprite_ground_3</sprite>
-    <sprite>sprites\sprite_ground_4</sprite>
-    <sprite>sprites\sprite_ground_5</sprite>
     <sprite>sprites\sprite_bullet</sprite>
-    <sprite>sprites\sprt_ground_destroy</sprite>
+    <sprites name="Environment">
+      <sprite>sprites\sprite_ground_1</sprite>
+      <sprite>sprites\sprite_ground_2</sprite>
+      <sprite>sprites\sprite_ground_3</sprite>
+      <sprite>sprites\sprite_ground_4</sprite>
+      <sprite>sprites\sprite_ground_5</sprite>
+      <sprite>sprites\sprt_ground_destroy</sprite>
+    </sprites>
+    <sprite>sprites\sprite_bat</sprite>
+    <sprite>sprites\sprite_joke_1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -45,6 +49,7 @@
       <object>objects\object12</object>
     </objects>
     <object>objects\obj_bullet</object>
+    <object>objects\obj_jokes</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test_J</room>
