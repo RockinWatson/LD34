@@ -25,12 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>spawn_time = 270;
+alarm[0] = spawn_time;
+random_num = 50
+</string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -47,7 +50,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>randomize();
+if random(random_num) &lt;= 10{
+    instance_create(room_width/2,room_height/2 + 550,obj_ground)
+}else if random(random_num) &lt;= 20{
+    instance_create(room_width/2,room_height/2 + 550,obj_ground_2)
+}else if random(random_num) &lt;= 30{
+    instance_create(room_width/2,room_height/2 + 550,obj_ground_3)
+}else if random(random_num) &lt;= 40{
+    instance_create(room_width/2,room_height/2 + 550,obj_ground_4)
+}else if random(random_num) &lt;= 50{
+    instance_create(room_width/2,room_height/2 + 550,obj_ground_5)
+}
+
+
+alarm[0] = irandom_range(spawn_time/2,spawn_time);
+</string>
           </argument>
         </arguments>
       </action>
