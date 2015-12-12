@@ -25,7 +25,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>can_shoot = true;
+            <string>can_shoot = false;
+powerup_spread = true;
+powerup_machinegun = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>powerup_spread = true;
 </string>
           </argument>
         </arguments>
@@ -72,19 +97,93 @@
           <argument>
             <kind>1</kind>
             <string>
+
+//Arm and Gun Angle//
 image_angle = point_direction (x,y, mouse_x, mouse_y);
 
+
+//Normal Shot//
 if can_shoot = true
 {
-    can_shoot = false;
-    alarm[0] = 45;
-    instance_create(x+lengthdir_x(25, image_angle), y+lengthdir_y(25, image_angle),obj_bullet);
-}
-
-if global.health &lt;=0{
-    image_index = 1;
+    powerup_spread = false
+    
+    if powerup_machinegun = true
+    {
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        alarm[0] = 7;
+        can_shoot = false;
+                 with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y);
+            }
+    }
+    else {
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        alarm[0] = 45;
+        can_shoot = false;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y);
+            }
+         }
 }
 else image_index = 0;
+
+//Spread Powerup//
+if powerup_spread = true
+{
+    can_shoot = false
+    
+    if powerup_machinegun = true
+    {
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        powerup_spread = false;
+        alarm [1] = 15;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y);
+            }
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        alarm [1] = 15;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y)+15;
+            }
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        alarm [1] = 15;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y)-15;
+            }
+    
+    }
+    else {
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        powerup_spread = false;
+        alarm [1] = 45;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y);
+            }
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        alarm [1] = 45;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y)+15;
+            }
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        alarm [1] = 45;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y)-15;
+            }
+        }
+}
+
+if global.health &lt;=0
+{
+    image_index = 1;
+} else image_index = 0;
 </string>
           </argument>
         </arguments>
