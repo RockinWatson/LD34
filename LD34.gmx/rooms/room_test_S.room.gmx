@@ -66,6 +66,7 @@
     <instance objName="obj_powerup_homing" x="473" y="779" name="inst_7A3A5778" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_powerup_machinegun" x="1105" y="769" name="inst_7EC591AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_powerup_controller" x="492" y="75" name="inst_2EEE7AEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_health" x="6" y="366" name="inst_8BC2BC4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

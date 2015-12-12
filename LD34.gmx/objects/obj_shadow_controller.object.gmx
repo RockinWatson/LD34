@@ -91,7 +91,7 @@ if global.health = 3{
     draw_set_blend_mode(bm_subtract);
     with (obj_torch)
     {
-        draw_circle_colour(x,y,random_range(125, 127),c_white,c_black,false);  
+        draw_circle_colour(x,y,random_range(150, 152),c_white,c_black,false);  
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
     }
 }
@@ -101,7 +101,7 @@ if global.health = 4{
     draw_set_blend_mode(bm_subtract);
     with (obj_torch)
     {
-        draw_circle_colour(x,y,random_range(160, 162),c_white,c_black,false);  
+        draw_circle_colour(x,y,random_range(195, 198),c_white,c_black,false);  
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
     }
 }
@@ -111,7 +111,7 @@ if global.health = 5{
     draw_set_blend_mode(bm_subtract);
     with (obj_torch)
     {
-        draw_circle_colour(x,y,random_range(185, 187),c_white,c_black,false);  
+        draw_circle_colour(x,y,random_range(235, 237),c_white,c_black,false);  
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
     }
 }
@@ -121,7 +121,7 @@ if global.health = 6{
     draw_set_blend_mode(bm_subtract);
     with (obj_torch)
     {
-        draw_circle_colour(x,y,random_range(205, 207),c_white,c_black,false);  
+        draw_circle_colour(x,y,random_range(265, 268),c_white,c_black,false);  
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
     }
 }
@@ -131,7 +131,7 @@ if global.health = 7{
     draw_set_blend_mode(bm_subtract);
     with (obj_torch)
     {
-        draw_circle_colour(x,y,random_range(230, 232),c_white,c_black,false);  
+        draw_circle_colour(x,y,random_range(295, 297),c_white,c_black,false);  
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
     }
 }
@@ -141,7 +141,7 @@ if global.health = 8{
     draw_set_blend_mode(bm_subtract);
     with (obj_torch)
     {
-        draw_circle_colour(x,y,random_range(260, 262),c_white,c_black,false);  
+        draw_circle_colour(x,y,random_range(335, 338),c_white,c_black,false);  
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
     }
 }
@@ -151,8 +151,17 @@ if global.health = 9{
     draw_set_blend_mode(bm_subtract);
     with (obj_torch)
     {
-        draw_circle_colour(x,y,random_range(300, 302),c_white,c_black,false);  
-        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+        draw_circle_colour(x,y,random_range(375, 377),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_blue, image_alpha);
+    }
+}
+if global.health &gt;= 10{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(475, 477),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_blue, image_alpha);
     }
 }
 

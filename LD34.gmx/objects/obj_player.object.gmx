@@ -32,6 +32,7 @@ vsp = 0;
 movespeed = 1.1;
 move_friction = .7;
 global.health = 1;
+global.invincible = 0;
 image_speed = 0;
 facing = 1;
 
@@ -145,8 +146,8 @@ if global.health &lt;=0{
     global.health = 0;
 }
 
-if global.health &gt;=9{
-    global.health = 9
+if global.health &gt;=10{
+    global.health = 10
 }
 
 //Arm following you
@@ -182,6 +183,7 @@ if (hsp&gt;13.5) or (hsp &lt; -13.5){
 if (vspeed &gt;30){
     vspeed = 30;
 }
+
 
 </string>
           </argument>

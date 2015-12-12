@@ -28,6 +28,7 @@
       <sprite>sprites\spr_pwr_machinegun</sprite>
       <sprite>sprites\spr_pwr_spread</sprite>
     </sprites>
+    <sprite>sprites\sprite_health</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -37,6 +38,7 @@
     <objects name="Santaur">
       <object>objects\obj_player</object>
       <object>objects\obj_arm</object>
+      <object>objects\obj_health</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_bat</object>
@@ -72,8 +74,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_test_J</room>
     <room>rooms\room_test_S</room>
+    <room>rooms\room_test_J</room>
     <room>rooms\room_test</room>
     <room>rooms\room_level_one</room>
   </rooms>
