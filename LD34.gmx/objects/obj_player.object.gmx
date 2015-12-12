@@ -80,8 +80,18 @@ move = key_left + key_right;
 hsp += move * movespeed;
 
 //Image Flip
+if keyboard_check (vk_right){
+image_index = 0
+}
+if keyboard_check (vk_left){
+image_index = 1
+}
+
+
+/*
 if move {facing = 1}
 if -move {facing = -1}
+*/
 
 //Friction Right
 if (hsp &gt; 2) and (!keyboard_check(vk_right)){
@@ -112,8 +122,8 @@ if (place_meeting(x+hsp,y,obj_ground))
 x += hsp;
  
 //Vertical Collision
-if (vsp &lt; 10){ 
-    vsp += grav;
+if (vsp &lt; 20){ 
+    vsp += 1;
 } 
 if (place_meeting(x,y+vsp,obj_ground))
 {
@@ -124,6 +134,11 @@ if (place_meeting(x,y+vsp,obj_ground))
     vsp = obj_ground.vspeed;
 }
 y += vsp;
+
+if position_meeting (sprite_width, sprite_height-1,obj_ground){
+    instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,obj_ground)
+    move_outside_solid(90,sprite_height);
+}
 
 //Torch Light
 if global.health &lt;=0{

@@ -19,16 +19,28 @@
       <sprite>sprites\sprite_ground_5</sprite>
       <sprite>sprites\sprt_ground_destroy</sprite>
     </sprites>
-    <sprite>sprites\sprite_bat</sprite>
     <sprite>sprites\sprite_joke_1</sprite>
+    <sprites name="Enemies">
+      <sprite>sprites\sprite_bat</sprite>
+    </sprites>
+    <sprites name="Powerups">
+      <sprite>sprites\spr_pwr_homing</sprite>
+      <sprite>sprites\spr_pwr_machinegun</sprite>
+      <sprite>sprites\spr_pwr_spread</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_player</object>
-    <object>objects\obj_arm</object>
+    <objects name="Santaur">
+      <object>objects\obj_player</object>
+      <object>objects\obj_arm</object>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\obj_bat</object>
+    </objects>
     <objects name="ground/collisions">
       <object>objects\obj_ground</object>
       <object>objects\obj_ground_2</object>
@@ -37,19 +49,27 @@
       <object>objects\obj_ground_5</object>
       <object>objects\obj_wall</object>
     </objects>
-    <object>objects\obj_lighting</object>
-    <object>objects\obj_torch</object>
-    <object>objects\obj_shadow_controller</object>
-    <object>objects\obj_shadow_parent</object>
     <objects name="Platform_Controller">
       <object>objects\obj_platform_controller</object>
       <object>objects\obj_ground_destroy</object>
+    </objects>
+    <objects name="Lighting">
+      <object>objects\obj_torch</object>
+      <object>objects\obj_lighting</object>
+      <object>objects\obj_shadow_controller</object>
+      <object>objects\obj_shadow_parent</object>
     </objects>
     <objects name="Test">
       <object>objects\object12</object>
     </objects>
     <object>objects\obj_bullet</object>
     <object>objects\obj_jokes</object>
+    <objects name="Powerups">
+      <object>objects\obj_powerup_homing</object>
+      <object>objects\obj_powerup_spread</object>
+      <object>objects\obj_powerup_machinegun</object>
+      <object>objects\obj_powerup_controller</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test_J</room>

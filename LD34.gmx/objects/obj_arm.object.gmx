@@ -25,9 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>can_shoot = false;
-powerup_spread = true;
-powerup_machinegun = false;
+            <string>global.can_shoot = false;
+
 </string>
           </argument>
         </arguments>
@@ -50,7 +49,7 @@ powerup_machinegun = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>powerup_spread = true;
+            <string>global.powerup_spread = true;
 </string>
           </argument>
         </arguments>
@@ -73,7 +72,7 @@ powerup_machinegun = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>can_shoot = true;
+            <string>global.can_shoot = true;
 </string>
           </argument>
         </arguments>
@@ -103,15 +102,14 @@ image_angle = point_direction (x,y, mouse_x, mouse_y);
 
 
 //Normal Shot//
-if can_shoot = true
+if global.can_shoot = true
 {
-    powerup_spread = false
     
-    if powerup_machinegun = true
+    if global.powerup_machinegun = true
     {
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
         alarm[0] = 7;
-        can_shoot = false;
+        global.can_shoot = false;
                  with (bullet)
             {
                 direction = point_direction (x, y, mouse_x, mouse_y);
@@ -120,7 +118,7 @@ if can_shoot = true
     else {
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
         alarm[0] = 45;
-        can_shoot = false;
+        global.can_shoot = false;
             with (bullet)
             {
                 direction = point_direction (x, y, mouse_x, mouse_y);
@@ -130,14 +128,12 @@ if can_shoot = true
 else image_index = 0;
 
 //Spread Powerup//
-if powerup_spread = true
-{
-    can_shoot = false
-    
-    if powerup_machinegun = true
+if global.powerup_spread = true
+{    
+    if global.powerup_machinegun = true
     {
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        powerup_spread = false;
+        global.powerup_spread = false;
         alarm [1] = 15;
             with (bullet)
             {
@@ -159,7 +155,7 @@ if powerup_spread = true
     }
     else {
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        powerup_spread = false;
+        global.powerup_spread = false;
         alarm [1] = 45;
             with (bullet)
             {
