@@ -30,17 +30,23 @@ grav = 5;
 hsp = 0;
 vsp = 0;
 jumpspeed = 20;
-movespeed = 1.5;
-friction = .75;
+movespeed = 5;
+move_friction = .6;
+
 
 var global.jump = 0;
 var torch = 1;
 
-image_index = 0;
 
-x_offset = -25;
-y_offset = -14;
+//Torch
+x_offset = 40;
+y_offset = -20;
 my_torch = instance_create(obj_player.x + x_offset, obj_player.y + y_offset, obj_torch)
+
+//Arm
+arm_x_offset = 5;
+arm_y_offset = -5;
+arm = instance_create(obj_player.x + arm_x_offset, obj_player.y + arm_y_offset, obj_arm) 
 </string>
           </argument>
         </arguments>
@@ -69,11 +75,26 @@ key_left = -keyboard_check(vk_left);
 key_jump = keyboard_check_pressed(vk_space);
 image_index = 0;
 
-
 //React to inputs
 move = key_left + key_right;
 hsp += move * movespeed;
- 
+
+//Friction Right
+if (hsp &gt; 2) and (!keyboard_check(vk_right)){
+    hsp -= move_friction;
+    if (hsp &lt;= 2)
+    {
+        hsp = 0;   
+    }
+}
+//Friction Left
+if (hsp &lt; -2) and (!keyboard_check(vk_left)){
+    hsp += move_friction;
+    if (hsp &gt;= -2)
+    {
+        hsp = 0;   
+    }
+}
 
 //Horizontal Collision
 if (place_meeting(x+hsp,y,obj_ground))
@@ -85,15 +106,6 @@ if (place_meeting(x+hsp,y,obj_ground))
     hsp = 0;
 }
 x += hsp;
-
-/*if move
-{
-    if (place_meeting (x + 1, y, obj_wall))
-    {
-        hsp = 0;
-    }
-}
-*/
  
 //Vertical Collision
 if (vsp &lt; 10){ 
@@ -127,15 +139,22 @@ else if instance_exists (obj_torch) &amp;&amp; (image_index == 1)
     my_torch.y = y + y_offset;
 }
 
+//Arm following you
+if instance_exists(obj_arm) &amp;&amp; (image_index == 0)
+{
+    arm.x = x + arm_x_offset;
+    arm.y = y + arm_y_offset;
+}
+else if instance_exists (obj_arm) &amp;&amp; (image_index == 1)
+{
+    arm.x = x - arm_x_offset;
+    arm.y = y + arm_x_offset;
+}
+
 //Speed Limits//
 if (hsp&gt;20) or (hsp &lt; -20){
     hsp = move*20
 }
-
-/*if (hsp &lt; -20){
-    hsp = - 20;
-}
-*/
 if (vspeed &gt;30){
     vspeed = 30;
 }
