@@ -29,12 +29,11 @@
 grav = 5;
 hsp = 0;
 vsp = 0;
-jumpspeed = 20;
-movespeed = 5;
-move_friction = .6;
+movespeed = 1.1;
+move_friction = .7;
+global.health = 1;
 
 
-var global.jump = 0;
 var torch = 1;
 
 
@@ -42,6 +41,7 @@ var torch = 1;
 x_offset = 40;
 y_offset = -20;
 my_torch = instance_create(obj_player.x + x_offset, obj_player.y + y_offset, obj_torch)
+
 
 //Arm
 arm_x_offset = 5;
@@ -72,7 +72,6 @@ arm = instance_create(obj_player.x + arm_x_offset, obj_player.y + arm_y_offset, 
             <string>//Get the player's input
 key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
-key_jump = keyboard_check_pressed(vk_space);
 image_index = 0;
 
 //React to inputs
@@ -121,22 +120,13 @@ if (place_meeting(x,y+1,obj_ground))
 }
 y += vsp;
 
-//Jumping
-if (place_meeting(x,y+1,obj_ground))
-{
-    vsp = key_jump * -jumpspeed
+//Torch Light
+if global.health &lt;=0{
+    global.health = 0;
 }
 
-//Torch following you
-if instance_exists(obj_torch) &amp;&amp; (image_index == 0)
-{
-    my_torch.x = x + x_offset;
-    my_torch.y = y + y_offset;
-}
-else if instance_exists (obj_torch) &amp;&amp; (image_index == 1)
-{
-    my_torch.x = x - x_offset;
-    my_torch.y = y + y_offset;
+if global.health &gt;=9{
+    global.health = 9
 }
 
 //Arm following you
@@ -149,6 +139,18 @@ else if instance_exists (obj_arm) &amp;&amp; (image_index == 1)
 {
     arm.x = x - arm_x_offset;
     arm.y = y + arm_x_offset;
+}
+
+//Torch following you
+if instance_exists(obj_torch) &amp;&amp; (image_index == 0)
+{
+    my_torch.x = x + x_offset;
+    my_torch.y = y + y_offset;
+}
+else if instance_exists (obj_torch) &amp;&amp; (image_index == 1)
+{
+    my_torch.x = x - x_offset;
+    my_torch.y = y + y_offset;
 }
 
 //Speed Limits//
@@ -226,7 +228,7 @@ if (vspeed &gt;30){
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="6" enumb="4">
+    <event eventtype="9" enumb="40">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -243,10 +245,30 @@ if (vspeed &gt;30){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var throw_torch = instance_create(x,y,obj_torch);
-throw_torch.direction = point_direction(x,y, mouse_x,mouse_y);
-throw_torch.image_angle = image_angle;
-throw_torch.speed = 15
+            <string>global.health -=1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="38">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.health +=1;
 </string>
           </argument>
         </arguments>

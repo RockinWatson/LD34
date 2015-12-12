@@ -58,19 +58,113 @@ with (obj_shadow_parent)
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
 }
 
-draw_set_blend_mode(bm_subtract);
-with (obj_torch)
-{
-    draw_circle_colour(x,y,random_range(122, 124),c_white,c_black,false);  
-    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+//Torch Light Level//
+
+if global.health &lt;=0{
+    with (obj_torch)
+    { 
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);;
+    }}
+
+if global.health = 1{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(65, 67),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
 }
+
+if global.health = 2{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(100, 102),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
+}
+
+if global.health = 3{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(125, 127),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
+}
+
+if global.health = 4{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(160, 162),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
+}
+
+if global.health = 5{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(185, 187),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
+}
+
+if global.health = 6{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(205, 207),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
+}
+
+if global.health = 7{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(230, 232),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
+}
+
+if global.health = 8{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(260, 262),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
+}
+
+if global.health = 9{
+
+    draw_set_blend_mode(bm_subtract);
+    with (obj_torch)
+    {
+        draw_circle_colour(x,y,random_range(300, 302),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
+}
+
+
+//--//
+
     
 draw_set_blend_mode (bm_normal);
 surface_reset_target();
     
 
 draw_surface (surface, 0, 0);
-
 </string>
           </argument>
         </arguments>
