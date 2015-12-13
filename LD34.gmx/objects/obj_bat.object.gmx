@@ -83,7 +83,9 @@ if place_meeting (x,y, obj_player)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>global.kill_count += 1;
+global.main_score += 50;
+instance_destroy();
 </string>
           </argument>
         </arguments>
