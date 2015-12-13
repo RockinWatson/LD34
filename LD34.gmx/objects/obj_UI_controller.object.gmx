@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-998</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprite_menu_health,sprite_index,141,727);
+            <string>draw_sprite(sprite_menu_health,sprite_index,212,685);
+//draw_sprite(sprite_menu_powerup,sprite_index,141,727);
+//draw_sprite(sprite_menu_controls,sprite_index,141,727);
+//draw_sprite(sprite_menu_score,sprite_index,141,727);
 </string>
           </argument>
         </arguments>
