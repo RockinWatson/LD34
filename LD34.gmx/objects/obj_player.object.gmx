@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,33 +26,26 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Variables
+global.health = 0;
+global.invincible = 0;
+
 grav = 10;
 hsp = 0;
 vsp = 0;
+move = 0;
 movespeed = 1.1;
 move_friction = .7;
-global.health = 0;
-global.invincible = 0;
-image_speed = 30;
 facing = 1;
+
 gamepad_set_axis_deadzone(0,0.2);
-move = 0;
-
-
 
 var torch = 1;
-
 
 //Torch
 x_offset = 40;
 y_offset = -20;
 my_torch = instance_create(obj_player.x + x_offset, obj_player.y + y_offset, obj_torch)
 
-
-//Arm
-arm_x_offset = 5;
-arm_y_offset = -5;
-arm = instance_create(obj_player.x + arm_x_offset, obj_player.y + arm_y_offset, obj_arm) 
 </string>
           </argument>
         </arguments>
@@ -76,22 +69,22 @@ arm = instance_create(obj_player.x + arm_x_offset, obj_player.y + arm_y_offset, 
           <argument>
             <kind>1</kind>
             <string>//Get the player's input
-key_right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh)&gt;0);
-key_left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh)&lt;0);
+global.key_right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh)&gt;0);
+global.key_left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh)&lt;0);
 
 //React to inputs
-move = key_right + -key_left
+move = global.key_right + -global.key_left
 hsp += move * movespeed;
 
 //Friction Right
-if (hsp &gt; 2) and (!key_right){
+if (hsp &gt; 2) and (!global.key_right){
     hsp -= move_friction;
     if (hsp &lt;= 2){
         hsp = 0;   
     }
 }
 //Friction Left
-if (hsp &lt; -2) and (!key_left){
+if (hsp &lt; -2) and (!global.key_left){
     hsp += move_friction;
     if (hsp &gt;= -2){
         hsp = 0;   
@@ -102,6 +95,7 @@ if (hsp &lt; -2) and (!key_left){
 if (place_meeting(x+hsp,y,obj_ground)){
     while(!place_meeting(x+sign(hsp),y,obj_ground)){
         x += sign(hsp);
+        obj_arm.x += sign(hsp)
     }
     hsp = 0;
 }
@@ -114,6 +108,7 @@ if (vsp &lt; 20){
 if (place_meeting(x,y+vsp,obj_ground)){
     while(!place_meeting(x,y+sign(vsp),obj_ground)){
         y += sign(vsp);
+        obj_arm.y += sign(vsp)
     }
     vsp = obj_ground.vspeed;
 }
@@ -129,21 +124,20 @@ if global.health &gt;=10{
 }
 
 //Arm following you
-if instance_exists(obj_arm) &amp;&amp; (image_index == 0) //(facing == 1)
+/*if instance_exists(obj_arm) &amp;&amp; (obj_player.image_index == 0) //(facing == 1)
 {
-    arm.x = x + arm_x_offset;
-    arm.y = y + arm_y_offset;
-}else if instance_exists(obj_arm) &amp;&amp; (image_index ==1) //(facing == -1)
+    arm.x = obj_player.x + arm_x_offset;
+    arm.y = obj_player.y + arm_y_offset;
+}else if instance_exists(obj_arm) &amp;&amp; (obj_player.image_index ==1) //(facing == -1)
 {
-    arm.x = x - arm_x_offset;
-    arm.y = y + arm_y_offset;
-}
-
+    arm.x = obj_player.x - arm_x_offset;
+    arm.y = obj_player.y + arm_y_offset;
+}*/
 //Torch following you
-if instance_exists(obj_torch) &amp;&amp; (image_index == 0){
+if instance_exists(obj_torch) &amp;&amp; (facing == 1){
     my_torch.x = x + x_offset - 6;
     my_torch.y = y + y_offset;
-}else if instance_exists (obj_torch) &amp;&amp; (image_index == 1){
+}else if instance_exists (obj_torch) &amp;&amp; (facing == -1){
     my_torch.x = x - x_offset + 15;
     my_torch.y = y + y_offset;
 }
