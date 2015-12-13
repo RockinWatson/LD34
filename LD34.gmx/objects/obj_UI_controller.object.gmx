@@ -25,10 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprite_menu_health,sprite_index,212,685);
-//draw_sprite(sprite_menu_powerup,sprite_index,141,727);
-//draw_sprite(sprite_menu_controls,sprite_index,141,727);
-//draw_sprite(sprite_menu_score,sprite_index,141,727);
+            <string>//left
+draw_sprite(sprite_menu_score,sprite_index,212,265);
+draw_sprite(sprite_menu_health,sprite_index,212,685);
+
+//right
+draw_sprite(sprite_menu_controls,sprite_index,1388,265);
+draw_sprite(sprite_menu_powerup,sprite_index,1388,685);
 </string>
           </argument>
         </arguments>
