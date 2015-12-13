@@ -80,6 +80,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_arm</object>
       <object>objects\obj_health</object>
+      <object>objects\obj_bullet</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_bat</object>
@@ -117,8 +118,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test_S</room>
-    <room>rooms\room_test_S_moving</room>
     <room>rooms\room_test_J</room>
+    <room>rooms\room_test_S_moving</room>
     <room>rooms\room_test</room>
     <room>rooms\room_level_one</room>
   </rooms>
