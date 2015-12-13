@@ -53,10 +53,10 @@
   <instances>
     <instance objName="obj_player" x="487" y="380" name="inst_D8334CE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadow_controller" x="0" y="704" name="inst_07AE98C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ground" x="364" y="589" name="inst_0DB23BCD" locked="0" code="" scaleX="0.55045872926712" scaleY="13.3000001907349" colour="4278190080" rotation="0"/>
-    <instance objName="obj_ground" x="1251" y="589" name="inst_E7B993E4" locked="0" code="" scaleX="0.680000007152557" scaleY="13.3500003814697" colour="4278190080" rotation="0"/>
-    <instance objName="obj_wall" x="365" y="1207" name="inst_FA9BFE05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="1249" y="1203" name="inst_D84263C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ground" x="350" y="608" name="inst_0DB23BCD" locked="0" code="" scaleX="0.55045872926712" scaleY="13.3000001907349" colour="4278190080" rotation="0"/>
+    <instance objName="obj_ground" x="1269" y="538" name="inst_E7B993E4" locked="0" code="" scaleX="0.680000007152557" scaleY="13.3500003814697" colour="4278190080" rotation="0"/>
+    <instance objName="obj_wall" x="301" y="1213" name="inst_FA9BFE05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="1340" y="1163" name="inst_D84263C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground" x="573" y="491" name="inst_FFB7EDEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_3" x="924" y="738" name="inst_A8260D34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_2" x="599" y="1008" name="inst_AAC6F13E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -85,6 +85,7 @@
     <instance objName="obj_UI_controller" x="2" y="760" name="inst_D616EDA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ui_powerup" x="1441" y="732" name="inst_F48DC943" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_score_controller" x="5" y="793" name="inst_7E880343" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_sidebar_controller" x="4" y="831" name="inst_5F0DD812" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

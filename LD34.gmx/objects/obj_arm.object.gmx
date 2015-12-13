@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>obj_shadow_parent</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="2" enumb="3">
@@ -186,11 +186,6 @@ if (global.powerup_spread == true) and (global.can_shoot == true)
             }
 }
 
-
-if global.health &lt;=0
-{
-    image_index = 1;
-} else image_index = 0;
 </string>
           </argument>
         </arguments>

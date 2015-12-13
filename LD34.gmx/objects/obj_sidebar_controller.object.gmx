@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-998</depth>
+  <depth>-997</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,17 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//left
-draw_sprite(sprite_menu_score,sprite_index,212,265);
-draw_sprite(sprite_menu_health,sprite_index,212,685);
-
-
-//right
-draw_sprite(sprite_menu_controls,sprite_index,1388,265);
-draw_sprite(sprite_menu_powerup,sprite_index,1388,685);
-
-
-
+            <string>draw_sprite(sprite_sidebars, sprite_index,212,450);
+draw_sprite(sprite_sidebars, sprite_index,1388,450);
 </string>
           </argument>
         </arguments>

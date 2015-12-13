@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_shadow_parent</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -33,10 +33,11 @@ movespeed = 1.1;
 move_friction = .7;
 global.health = 0;
 global.invincible = 0;
-image_speed = 0;
+image_speed = 30;
 facing = 1;
 gamepad_set_axis_deadzone(0,0.2);
 move = 0;
+
 
 
 var torch = 1;
@@ -82,39 +83,24 @@ key_left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh)&lt;0);
 move = key_right + -key_left
 hsp += move * movespeed;
 
-//Image Flip
-if key_right{
-    image_index = 0
-}
-if key_left{
-    image_index = 1
-}
-if move {facing = 1}
-if -move {facing = -1}
-
-
 //Friction Right
 if (hsp &gt; 2) and (!key_right){
     hsp -= move_friction;
-    if (hsp &lt;= 2)
-    {
+    if (hsp &lt;= 2){
         hsp = 0;   
     }
 }
 //Friction Left
 if (hsp &lt; -2) and (!key_left){
     hsp += move_friction;
-    if (hsp &gt;= -2)
-    {
+    if (hsp &gt;= -2){
         hsp = 0;   
     }
 }
 
 //Horizontal Collision
-if (place_meeting(x+hsp,y,obj_ground))
-{
-    while(!place_meeting(x+sign(hsp),y,obj_ground))
-    {
+if (place_meeting(x+hsp,y,obj_ground)){
+    while(!place_meeting(x+sign(hsp),y,obj_ground)){
         x += sign(hsp);
     }
     hsp = 0;
@@ -125,34 +111,13 @@ x += hsp;
 if (vsp &lt; 20){ 
     vsp += 1;
 } 
-if (place_meeting(x,y+vsp,obj_ground))
-{
-    while(!place_meeting(x,y+sign(vsp),obj_ground))
-    {
+if (place_meeting(x,y+vsp,obj_ground)){
+    while(!place_meeting(x,y+sign(vsp),obj_ground)){
         y += sign(vsp);
     }
     vsp = obj_ground.vspeed;
-
 }
 y += vsp;
-
-
-//Animation
-if place_meeting(x,y-2,obj_ground){
-if hsp &gt; 0 || hsp &lt; 0{
-    sprite_index = sprite_player_moving;
-}else if hsp == 0{
-    sprite_index = sprite_player_idle;
-}
-}else{
-    sprite_index = sprite_player_falling;
-}
-
-//Take player out of ground 
-if position_meeting (sprite_width, sprite_height-1,obj_ground){
-    instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,obj_ground)
-    move_outside_solid(90,sprite_height);
-}
 
 //Torch Light
 if global.health &lt;=0{
@@ -166,27 +131,20 @@ if global.health &gt;=10{
 //Arm following you
 if instance_exists(obj_arm) &amp;&amp; (image_index == 0) //(facing == 1)
 {
-    arm.image_xscale = 1;
-    arm.x = x + arm_x_offset ;
-    arm.y = y + arm_y_offset ;
-}
-else if instance_exists(obj_arm) &amp;&amp; (image_index ==1) //(facing == -1)
+    arm.x = x + arm_x_offset;
+    arm.y = y + arm_y_offset;
+}else if instance_exists(obj_arm) &amp;&amp; (image_index ==1) //(facing == -1)
 {
-    arm.image_xscale = -1;
-    //arm.image_xscale = -1;
     arm.x = x - arm_x_offset;
     arm.y = y + arm_y_offset;
 }
 
 //Torch following you
-if instance_exists(obj_torch) &amp;&amp; (image_index == 0)
-{
+if instance_exists(obj_torch) &amp;&amp; (image_index == 0){
     my_torch.x = x + x_offset - 6;
-    my_torch.y = y + y_offset ;
-}
-else if instance_exists (obj_torch) &amp;&amp; (image_index == 1)
-{
-    my_torch.x = x - x_offset +15;
+    my_torch.y = y + y_offset;
+}else if instance_exists (obj_torch) &amp;&amp; (image_index == 1){
+    my_torch.x = x - x_offset + 15;
     my_torch.y = y + y_offset;
 }
 
@@ -196,6 +154,40 @@ if (hsp&gt;13.5) or (hsp &lt; -13.5){
 }
 if (vspeed &gt;30){
     vspeed = 30;
+}
+
+//Take player out of ground 
+if position_meeting (sprite_width, sprite_height-1,obj_ground){
+    instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,obj_ground)
+    move_outside_solid(90,sprite_height);
+}
+
+//Image Flip
+if (move){
+    facing = move; 
+    obj_arm.image_yscale = move;
+}else if -move {
+    facing = -1
+    obj_arm.image_yscale = -1;
+}
+//Running Animation
+if place_meeting(x, y+1, obj_ground) {
+    if move!= 0 {sprite_index = sprite_player_moving}else{sprite_index = sprite_player_idle}
+}else{
+ if vsp &gt; 0 {sprite_index = sprite_player_falling}
+}
+
+/*
+if move {
+    facing = 1
+    obj_arm.image_yscale = 1;
+    sprite_index = sprite_player_moving
+}else if -move {
+    facing = -1
+    obj_arm.image_yscale = -1;
+    sprite_index = sprite_player_moving
+}else{
+    sprite_index = sprite_player_idle
 }
 
 
