@@ -84,6 +84,7 @@
     <instance objName="obj_ground_4" x="1227" y="2735" name="inst_9DD94C4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_UI_controller" x="2" y="760" name="inst_D616EDA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ui_powerup" x="1441" y="732" name="inst_F48DC943" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_score_controller" x="5" y="793" name="inst_7E880343" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

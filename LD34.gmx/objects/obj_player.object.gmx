@@ -33,7 +33,7 @@ movespeed = 1.1;
 move_friction = .7;
 global.health = 0;
 global.invincible = 0;
-image_speed = 30;
+image_speed = 0;
 facing = 1;
 gamepad_set_axis_deadzone(0,0.2);
 move = 0;
@@ -84,10 +84,10 @@ hsp += move * movespeed;
 
 //Image Flip
 if key_right{
-image_index = 0
+    image_index = 0
 }
 if key_left{
-image_index = 1
+    image_index = 1
 }
 if move {facing = 1}
 if -move {facing = -1}
@@ -132,8 +132,21 @@ if (place_meeting(x,y+vsp,obj_ground))
         y += sign(vsp);
     }
     vsp = obj_ground.vspeed;
+
 }
 y += vsp;
+
+
+//Animation
+if place_meeting(x,y-2,obj_ground){
+if hsp &gt; 0 || hsp &lt; 0{
+    sprite_index = sprite_player_moving;
+}else if hsp == 0{
+    sprite_index = sprite_player_idle;
+}
+}else{
+    sprite_index = sprite_player_falling;
+}
 
 //Take player out of ground 
 if position_meeting (sprite_width, sprite_height-1,obj_ground){
@@ -209,6 +222,7 @@ if (vspeed &gt;30){
           <argument>
             <kind>1</kind>
             <string>y -= 2;
+
 </string>
           </argument>
         </arguments>
