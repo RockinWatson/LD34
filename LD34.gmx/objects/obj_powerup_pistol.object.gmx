@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_shadow_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="3" enumb="0">
@@ -31,11 +31,10 @@
 
 
 if place_meeting (x,y, obj_player) {
-    if global.powerup_spread = false
-        {
-        global.can_shoot = true;
-//        global.normal_shoot = true;
-        }
+    global.powerup_homing = false;
+    global.powerup_machinegun = false;
+    global.powerup_spread = false;
+    global.powerup_pistol = true;
     instance_destroy();
 }
 </string>
