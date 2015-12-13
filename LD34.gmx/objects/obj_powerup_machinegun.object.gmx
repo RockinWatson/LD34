@@ -35,6 +35,8 @@ if place_meeting (x,y, obj_player) {
     global.powerup_spread = false;
     global.powerup_homing = false;
     global.powerup_machinegun = true;
+    global.present_count +=1;
+    global.main_score += 20;
     instance_destroy();
 }
 </string>

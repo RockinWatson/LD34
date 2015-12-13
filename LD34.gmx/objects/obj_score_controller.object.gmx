@@ -25,12 +25,63 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.main_score = 0;
-global.high_score = 0;
-global.spirit_count = 0;
+            <string>global.spirit_count = 0;
 global.kill_count = 0;
 global.present_count = 0;
 global.time = 0;
+global.main_score = 0;
+global.high_score = 0;
+time_score = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.main_score += 50;
+time_score = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if time_score = true{
+    time_score = false;
+    alarm [0] = 450;
+}
 </string>
           </argument>
         </arguments>
@@ -54,6 +105,8 @@ global.time = 0;
           <argument>
             <kind>1</kind>
             <string>global.time += 1 / 30;
+
+
 </string>
           </argument>
         </arguments>
@@ -80,7 +133,7 @@ global.time = 0;
 draw_set_font (font_main);
 
 //Draw Timer//
-draw_text_colour(view_xview[0]+ 160, view_yview[0] + 42,global.time, c_red, c_red, c_red, c_red, 1);
+draw_text_colour(view_xview[0]+ 160, view_yview[0] + 42,round(global.time), c_red, c_red, c_red, c_red, 1);
 
 //Draw Spirits//
 draw_text_colour(view_xview[0]+ 218, view_yview[0] + 94,global.spirit_count, c_red, c_red, c_red, c_red, 1);
