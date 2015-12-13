@@ -17,12 +17,29 @@
     <sprite>sprites\sprite_torch</sprite>
     <sprite>sprites\sprite_bullet</sprite>
     <sprites name="Environment">
-      <sprite>sprites\sprite_ground_1</sprite>
-      <sprite>sprites\sprite_ground_2</sprite>
-      <sprite>sprites\sprite_ground_3</sprite>
-      <sprite>sprites\sprite_ground_4</sprite>
-      <sprite>sprites\sprite_ground_5</sprite>
-      <sprite>sprites\sprt_ground_destroy</sprite>
+      <sprites name="Spikes">
+        <sprite>sprites\sprite_spike_1</sprite>
+        <sprite>sprites\sprite_spike_2</sprite>
+        <sprite>sprites\sprite_spike_3</sprite>
+        <sprite>sprites\sprite_spike_4</sprite>
+      </sprites>
+      <sprites name="Snowflakes">
+        <sprite>sprites\sprite_snowflake_1</sprite>
+        <sprite>sprites\sprite_snowflake_2</sprite>
+        <sprite>sprites\sprite_snowflake_3</sprite>
+      </sprites>
+      <sprites name="Ground">
+        <sprite>sprites\sprite_ground_1</sprite>
+        <sprite>sprites\sprite_ground_2</sprite>
+        <sprite>sprites\sprite_ground_4</sprite>
+        <sprite>sprites\sprite_ground_3</sprite>
+        <sprite>sprites\sprite_ground_5</sprite>
+        <sprite>sprites\sprt_ground_destroy</sprite>
+      </sprites>
+      <sprites name="Trees">
+        <sprite>sprites\sprite_tree_1</sprite>
+        <sprite>sprites\sprite_tree_2</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\sprite_joke_1</sprite>
     <sprites name="Enemies">
@@ -36,6 +53,20 @@
     </sprites>
     <sprite>sprites\sprite_health</sprite>
     <sprite>sprites\sprite_pickup_light</sprite>
+    <sprites name="UI">
+      <sprite>sprites\sprite_menu_controls</sprite>
+      <sprite>sprites\sprite_menu_health</sprite>
+      <sprite>sprites\sprite_menu_powerup</sprite>
+      <sprite>sprites\sprite_menu_score</sprite>
+      <sprites name="Powerup">
+        <sprite>sprites\sprite_shot_1</sprite>
+        <sprite>sprites\sprite_shot_2</sprite>
+        <sprite>sprites\sprite_shot_3</sprite>
+        <sprite>sprites\sprite_shot_4</sprite>
+        <sprite>sprites\sprite_shot_5</sprite>
+        <sprite>sprites\sprite_shot_6</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -84,6 +115,7 @@
       <object>objects\obj_pickup_light</object>
       <object>objects\obj_powerup_controller</object>
     </objects>
+    <object>objects\obj_UI_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test_J</room>

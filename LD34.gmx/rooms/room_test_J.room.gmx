@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>draw_sprite(sprite_menu_health,sprite_index,141,727);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -53,8 +53,8 @@
   <instances>
     <instance objName="obj_player" x="487" y="380" name="inst_D8334CE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadow_controller" x="0" y="704" name="inst_07AE98C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ground" x="364" y="589" name="inst_0DB23BCD" locked="0" code="" scaleX="0.55045872926712" scaleY="13.3000001907349" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ground" x="1251" y="589" name="inst_E7B993E4" locked="0" code="" scaleX="0.680000007152557" scaleY="13.3500003814697" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ground" x="364" y="589" name="inst_0DB23BCD" locked="0" code="" scaleX="0.55045872926712" scaleY="13.3000001907349" colour="4278190080" rotation="0"/>
+    <instance objName="obj_ground" x="1251" y="589" name="inst_E7B993E4" locked="0" code="" scaleX="0.680000007152557" scaleY="13.3500003814697" colour="4278190080" rotation="0"/>
     <instance objName="obj_wall" x="365" y="1207" name="inst_FA9BFE05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1249" y="1203" name="inst_D84263C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground" x="573" y="491" name="inst_FFB7EDEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -82,6 +82,7 @@
     <instance objName="obj_powerup_pistol" x="686" y="411" name="inst_0048FF87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_5" x="696" y="2408" name="inst_E0BD1649" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_4" x="1227" y="2735" name="inst_9DD94C4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_UI_controller" x="2" y="760" name="inst_D616EDA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
