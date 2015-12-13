@@ -29,9 +29,11 @@
     vspeed = -4
 }
 
-
 if place_meeting (x,y, obj_player) {
-    global.powerup_homing = 1;
+    global.powerup_pistol = false;
+    global.powerup_machinegun = false;
+    global.powerup_spread = false;
+    global.powerup_homing = true;
     instance_destroy();
 }
 </string>

@@ -31,7 +31,10 @@
 }
 
 if place_meeting (x,y, obj_player) {
-    global.powerup_machinegun = 1;
+    global.powerup_pistol = false;
+    global.powerup_spread = false;
+    global.powerup_homing = false;
+    global.powerup_machinegun = true;
     instance_destroy();
 }
 </string>

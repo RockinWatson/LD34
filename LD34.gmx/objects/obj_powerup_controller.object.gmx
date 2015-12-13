@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.normal_shot = true;
+            <string>global.can_shoot = true;
+global.powerup_pistol = false;
 global.powerup_homing = false;
 global.powerup_spread = false;
 global.powerup_machinegun = false;

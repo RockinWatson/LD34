@@ -105,8 +105,6 @@
     <objects name="Test">
       <object>objects\object12</object>
     </objects>
-    <object>objects\obj_bullet</object>
-    <object>objects\obj_jokes</object>
     <objects name="Pickups">
       <object>objects\obj_powerup_pistol</object>
       <object>objects\obj_powerup_spread</object>
@@ -118,8 +116,9 @@
     <object>objects\obj_UI_controller</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_test_J</room>
     <room>rooms\room_test_S</room>
+    <room>rooms\room_test_S_moving</room>
+    <room>rooms\room_test_J</room>
     <room>rooms\room_test</room>
     <room>rooms\room_level_one</room>
   </rooms>

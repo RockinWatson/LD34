@@ -8,7 +8,7 @@
   <parentName>obj_shadow_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,8 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.can_shoot = false;
-
+            <string>global.can_shoot = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.can_shoot = true;
 </string>
           </argument>
         </arguments>
@@ -49,10 +71,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.can_shoot = false
-{
-global.powerup_spread = true;
-}
+            <string>global.can_shoot = true;
 </string>
           </argument>
         </arguments>
@@ -75,9 +94,7 @@ global.powerup_spread = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.powerup_spread = false{
-    global.can_shoot = true;
-}
+            <string>global.can_shoot = true;
 </string>
           </argument>
         </arguments>
@@ -100,27 +117,13 @@ global.powerup_spread = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-//Arm and Gun Angle//
+            <string>//Arm and Gun Angle//
 image_angle = point_direction (x,y, mouse_x, mouse_y);
 
 
-//Normal Shot//
-if (global.can_shoot == true)
+//Pistol Shot//
+if (global.can_shoot == true) and (global.powerup_pistol == true)
 {
-    
-    if global.powerup_machinegun = true
-    {
-        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        alarm[0] = 7;
-        global.can_shoot = false;
-                 with (bullet)
-            {
-                direction = point_direction (x, y, mouse_x, mouse_y);
-            }
-    }
-    else {
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
         global.can_shoot = false;
         alarm[0] = 45;
@@ -128,40 +131,42 @@ if (global.can_shoot == true)
             {
                 direction = point_direction (x, y, mouse_x, mouse_y);
             }
-         }
 }
+
+//Homing Shot//
+if (global.can_shoot == true) and (global.powerup_homing = true)
+{
+
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        global.can_shoot = false;
+        alarm[3] = 25;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y);
+            }
+}
+
+//Machine Gun//
+if (global.powerup_machinegun = true) and (global.can_shoot == true)
+{
+
+    bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+    global.can_shoot = false;
+        alarm[3] = 7;
+        with (bullet)
+        {
+            direction = point_direction (x, y, mouse_x, mouse_y);
+        }
+}
+
 else image_index = 0;
 
 //Spread Powerup//
-if (global.powerup_spread == true)
+if (global.powerup_spread == true) and (global.can_shoot == true)
 {    
-    global.can_shoot = false;
-    if global.powerup_machinegun = true
-    {
+
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        global.powerup_spread = false;
-        alarm [1] = 15;
-            with (bullet)
-            {
-                direction = point_direction (x, y, mouse_x, mouse_y);
-            }
-        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        alarm [1] = 15;
-            with (bullet)
-            {
-                direction = point_direction (x, y, mouse_x, mouse_y)+15;
-            }
-        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        alarm [1] = 15;
-            with (bullet)
-            {
-                direction = point_direction (x, y, mouse_x, mouse_y)-15;
-            }
-    
-    }
-    else {
-        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        global.powerup_spread = false;
+        global.can_shoot = false;
         alarm [1] = 45;
             with (bullet)
             {
@@ -179,8 +184,8 @@ if (global.powerup_spread == true)
             {
                 direction = point_direction (x, y, mouse_x, mouse_y)-15;
             }
-        }
 }
+
 
 if global.health &lt;=0
 {
