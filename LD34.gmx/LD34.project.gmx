@@ -114,6 +114,9 @@
       <object>objects\obj_powerup_controller</object>
     </objects>
     <object>objects\obj_UI_controller</object>
+    <objects name="UI">
+      <object>objects\obj_ui_powerup</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test_J</room>

@@ -158,11 +158,11 @@ if global.health = 9{
 if global.health &gt;= 10{
 
     draw_set_blend_mode(bm_subtract);
-    with (obj_torch)
-    {
-        draw_circle_colour(x,y,random_range(475, 477),c_white,c_black,false);  
+    with (obj_torch){
+        draw_rectangle (view_xview[0], view_yview[0], view_xview[0]+1600, view_yview[0]+900, false);
+        //draw_rectangle_colour(room.x,room.y,room_width.x+100, room_height.y+100,c_white,c_white,c_white,c_white,false);  
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_blue, image_alpha);
-    }
+        }
 }
 
 //Pickup Light Level//
