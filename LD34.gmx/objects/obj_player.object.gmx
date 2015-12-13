@@ -87,12 +87,9 @@ image_index = 0
 if keyboard_check (vk_left){
 image_index = 1
 }
-
-
-/*
 if move {facing = 1}
 if -move {facing = -1}
-*/
+
 
 //Friction Right
 if (hsp &gt; 2) and (!keyboard_check(vk_right)){
@@ -138,6 +135,7 @@ if (place_meeting(x,y+vsp,obj_ground))
 }
 y += vsp;
 
+//Take player out of ground 
 if position_meeting (sprite_width, sprite_height-1,obj_ground){
     instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,obj_ground)
     move_outside_solid(90,sprite_height);
