@@ -6,7 +6,12 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite_player</sprite>
+    <sprites name="Player">
+      <sprite>sprites\sprite_player_moving</sprite>
+      <sprite>sprites\sprite_player_idle</sprite>
+      <sprite>sprites\sprite_player_falling</sprite>
+      <sprite>sprites\sprite_player_death</sprite>
+    </sprites>
     <sprite>sprites\sprite_arm</sprite>
     <sprite>sprites\sprite_wall</sprite>
     <sprite>sprites\sprite_torch</sprite>
@@ -27,8 +32,10 @@
       <sprite>sprites\spr_pwr_homing</sprite>
       <sprite>sprites\spr_pwr_machinegun</sprite>
       <sprite>sprites\spr_pwr_spread</sprite>
+      <sprite>sprites\spr_pwr_pistol</sprite>
     </sprites>
     <sprite>sprites\sprite_health</sprite>
+    <sprite>sprites\sprite_pickup_light</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -66,16 +73,18 @@
     </objects>
     <object>objects\obj_bullet</object>
     <object>objects\obj_jokes</object>
-    <objects name="Powerups">
-      <object>objects\obj_powerup_homing</object>
+    <objects name="Pickups">
+      <object>objects\obj_powerup_pistol</object>
       <object>objects\obj_powerup_spread</object>
+      <object>objects\obj_powerup_homing</object>
       <object>objects\obj_powerup_machinegun</object>
+      <object>objects\obj_pickup_light</object>
       <object>objects\obj_powerup_controller</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_test_S</room>
     <room>rooms\room_test_J</room>
+    <room>rooms\room_test_S</room>
     <room>rooms\room_test</room>
     <room>rooms\room_level_one</room>
   </rooms>

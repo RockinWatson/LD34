@@ -71,7 +71,7 @@ if global.health = 1{
     draw_set_blend_mode(bm_subtract);
     with (obj_torch)
     {
-        draw_circle_colour(x,y,random_range(65, 67),c_white,c_black,false);  
+        draw_circle_colour(x,y,random_range(80, 83),c_white,c_black,false);  
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
     }
 }
@@ -81,7 +81,7 @@ if global.health = 2{
     draw_set_blend_mode(bm_subtract);
     with (obj_torch)
     {
-        draw_circle_colour(x,y,random_range(100, 102),c_white,c_black,false);  
+        draw_circle_colour(x,y,random_range(115, 117),c_white,c_black,false);  
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, image_alpha);
     }
 }
@@ -165,6 +165,15 @@ if global.health &gt;= 10{
     }
 }
 
+//Pickup Light Level//
+draw_set_blend_mode(bm_subtract);
+{
+    with (obj_pickup_light)
+    {
+        draw_circle_colour(x,y,random_range(80, 83),c_white,c_black,false);  
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_blue, image_alpha);
+    }
+}
 
 //--//
 

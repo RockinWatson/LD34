@@ -49,7 +49,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.powerup_spread = true;
+            <string>if global.can_shoot = false
+{
+global.powerup_spread = true;
+}
 </string>
           </argument>
         </arguments>
@@ -72,7 +75,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.can_shoot = true;
+            <string>if global.powerup_spread = false{
+    global.can_shoot = true;
+}
 </string>
           </argument>
         </arguments>
@@ -102,7 +107,7 @@ image_angle = point_direction (x,y, mouse_x, mouse_y);
 
 
 //Normal Shot//
-if global.can_shoot = true
+if (global.can_shoot == true)
 {
     
     if global.powerup_machinegun = true
@@ -117,8 +122,8 @@ if global.can_shoot = true
     }
     else {
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        alarm[0] = 45;
         global.can_shoot = false;
+        alarm[0] = 45;
             with (bullet)
             {
                 direction = point_direction (x, y, mouse_x, mouse_y);
@@ -128,8 +133,9 @@ if global.can_shoot = true
 else image_index = 0;
 
 //Spread Powerup//
-if global.powerup_spread = true
+if (global.powerup_spread == true)
 {    
+    global.can_shoot = false;
     if global.powerup_machinegun = true
     {
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);

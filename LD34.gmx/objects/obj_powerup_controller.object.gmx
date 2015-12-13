@@ -51,11 +51,7 @@ global.powerup_machinegun = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.powerup_spread = true
-{
-    global.can_shoot = false;
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
