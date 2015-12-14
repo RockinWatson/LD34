@@ -168,8 +168,8 @@
     <objects name="UI">
       <object>objects\obj_ui_powerup</object>
       <object>objects\obj_score_controller</object>
-      <object>objects\obj_sidebar_controller</object>
       <object>objects\obj_title_controller</object>
+      <object>objects\obj_sidebar</object>
     </objects>
     <objects name="Music_Controllers">
       <object>objects\obj_music_controller</object>
@@ -181,6 +181,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_test_s_sides</room>
     <room>rooms\room_title</room>
     <room>rooms\room_story_1</room>
     <room>rooms\room_story_2</room>

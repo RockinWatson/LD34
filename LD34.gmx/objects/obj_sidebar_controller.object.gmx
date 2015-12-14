@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprite_sidebars, sprite_index,212,450);
-draw_sprite(sprite_sidebars, sprite_index,1388,450);
+            <string>//draw_sprite(sprite_sidebars, sprite_index,212,450);
+//draw_sprite(sprite_sidebars, sprite_index,1388,450);
 </string>
           </argument>
         </arguments>
