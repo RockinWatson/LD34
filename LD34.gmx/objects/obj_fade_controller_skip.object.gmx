@@ -55,9 +55,9 @@ alarm [0] = fade_speed;
 fade_alpha += 0.05;
 if (fade_alpha &gt;= 1.0)
 {
-    room_goto_next()
+    room_goto(room_test_J);
     instance_destroy()
-        
+
 }
 </string>
           </argument>

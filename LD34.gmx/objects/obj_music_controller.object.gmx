@@ -77,30 +77,7 @@ if (room == room_test_S){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(room_test_S_3);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//room_goto(room_test_S_2);
+            <string>room_goto(room_test_J);
 </string>
           </argument>
         </arguments>
@@ -133,11 +110,20 @@ if (room == room_title) and !audio_is_playing(sound_super_santaur) and keyboard_
 }
 
 //Skip Story//
-if (room == room_story_1) and (keyboard_check_pressed(ord('D'))){
+if (room == room_story_1) and !audio_is_playing(sound_go) and (keyboard_check_pressed(ord('D'))){
     audio_stop_sound(music_story);
     audio_play_sound(sound_go, 20, false);
-    alarm [1] = 60;
-    instance_create(0,0, obj_fade_controller);
+    instance_create(0,0, obj_fade_controller_skip);
+}
+if (room == room_story_2) and !audio_is_playing(sound_go) and (keyboard_check_pressed(ord('D'))){
+    audio_stop_sound(music_story);
+    audio_play_sound(sound_go, 20, false);
+    instance_create(0,0, obj_fade_controller_skip);
+}
+if (room == room_story_3) and !audio_is_playing(sound_go) and (keyboard_check_pressed(ord('D'))){
+    audio_stop_sound(music_story);
+    audio_play_sound(sound_go, 20, false);
+    instance_create(0,0, obj_fade_controller_skip);
 }
 </string>
           </argument>
