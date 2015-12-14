@@ -85,12 +85,32 @@
       </sprites>
       <sprite>sprites\sprite_sidebars</sprite>
     </sprites>
+    <sprites name="Title Screen">
+      <sprite>sprites\sprite_title</sprite>
+      <sprite>sprites\sprite_continue</sprite>
+    </sprites>
+    <sprites name="Story">
+      <sprite>sprites\sprite_bat_stealing</sprite>
+      <sprite>sprites\sprite_cave</sprite>
+      <sprite>sprites\sprite_ghost_stealing</sprite>
+      <sprite>sprites\sprite_house_1</sprite>
+      <sprite>sprites\sprite_house_2</sprite>
+      <sprite>sprites\sprite_story_1</sprite>
+      <sprite>sprites\sprite_story_2</sprite>
+      <sprite>sprites\sprite_story_3</sprite>
+      <sprite>sprites\sprite54</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
     <background>background\background2</background>
     <background>background\background3</background>
     <background>background\background4</background>
+    <backgrounds name="Title/Story">
+      <background>background\background_story_1</background>
+      <background>background\background_story_2</background>
+      <background>background\background_story_3</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -144,14 +164,21 @@
       <object>objects\obj_ui_powerup</object>
       <object>objects\obj_score_controller</object>
       <object>objects\obj_sidebar_controller</object>
+      <object>objects\obj_title_controller</object>
     </objects>
     <objects name="Music_Controllers">
       <object>objects\obj_music_controller</object>
+    </objects>
+    <objects name="Moving_Story">
+      <object>objects\obj_tree_1</object>
+      <object>objects\obj_ghost_stealing</object>
+      <object>objects\obj_bat_stealing</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_title</room>
     <room>rooms\room_story_1</room>
+    <room>rooms\room_story_2</room>
     <room>rooms\room_test_S</room>
     <room>rooms\room_test_J</room>
     <room>rooms\room_J_Move</room>

@@ -37,6 +37,12 @@ if global.powerup_homing == true{
 if global.powerup_machinegun == true{
     sprite_index = sprite_shot_2;
 }
+if global.powerup_machinespread == true{
+    sprite_index = sprite_shot_5;
+}
+if global.powerup_machinehoming == true{
+    sprite_index = sprite_shot_6;
+}
 </string>
           </argument>
         </arguments>
