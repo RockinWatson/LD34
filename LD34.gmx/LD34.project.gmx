@@ -99,6 +99,7 @@
       <sprite>sprites\sprite_story_2</sprite>
       <sprite>sprites\sprite_story_3</sprite>
       <sprite>sprites\sprite54</sprite>
+      <sprite>sprites\sprite_skip</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -144,6 +145,7 @@
       <object>objects\obj_shadow_controller</object>
       <object>objects\obj_shadow_parent</object>
       <object>objects\obj_fade_controller</object>
+      <object>objects\obj_fade_controller_skip</object>
       <object>objects\obj_fade_in_controller</object>
     </objects>
     <objects name="Test">
@@ -176,10 +178,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_test_J</room>
     <room>rooms\room_title</room>
     <room>rooms\room_story_1</room>
     <room>rooms\room_story_2</room>
+    <room>rooms\room_story_3</room>
+    <room>rooms\room_test_J</room>
     <room>rooms\room_test_S</room>
     <room>rooms\room_J_Move</room>
     <room>rooms\room_test_S_moving</room>

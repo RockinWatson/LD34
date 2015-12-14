@@ -30,7 +30,11 @@ ghost_fly = 1;
 bat_fly = 1;
 
 if room == room_story_1{
-    alarm [1] = 300;
+    alarm [1] = 210;
+}
+
+if room == room_story_2{
+    alarm [1] = 210
 }
 </string>
           </argument>
@@ -219,12 +223,16 @@ draw_sprite(sprite_continue, sprite_index, 800, 835);
 
 //Story 1
 if room == room_story_1{
-    draw_sprite(sprite_story_1, sprite_index, 800, 250)
+    draw_sprite(sprite_story_1, sprite_index, 800, 250);
 }
 
 if room == room_story_2{
     draw_sprite(sprite_story_1, sprite_index, 800, 250);
     draw_sprite(sprite_story_2, sprite_index, 800, 500);
+}
+
+if room == room_story_3{
+    draw_sprite(sprite_house_2, sprite_index, 800, 450);
 }
 </string>
           </argument>
