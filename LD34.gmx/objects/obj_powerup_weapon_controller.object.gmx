@@ -25,28 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.can_shoot = true;
-global.powerup_pistol = false;
-global.powerup_homing = false;
-global.powerup_spread = false;
-global.powerup_machinegun = false;
-global.powerup_machinespread = false;
-global.powerup_machinehoming = false;
-
-//light variables
-spawn_time_light = 100;
-alarm[0] = spawn_time_light;
-
+            <string>randomize()
 //weapon variables
 spawn_time_weapon = 50;
-alarm[1] = spawn_time_weapon;
+alarm[0] = spawn_time_weapon;
 random_num = 60;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -63,8 +52,7 @@ random_num = 60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize()
-if random(random_num) &lt;= 10{
+            <string>if random(random_num) &lt;= 10{
     newinst = instance_create(irandom_range(450,1150),room_height/2+650, obj_powerup_pistol);
     with(newinst) {
         var tries, done;
@@ -163,47 +151,6 @@ if random(random_num) &lt;= 10{
 }
 
 alarm[0] = spawn_time_weapon;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//instance_create(irandom_range(450,1150),room_height/2+490, obj_pickup_light)
-newinst = instance_create(irandom_range(450,1150),room_height/2+575, obj_pickup_light);
-with(newinst) {
-    var tries, done;
-    tries = 0;
-    done = false;
-    do {
-        tries += 1;
-        x = irandom_range(450,1150);
-        done = !place_meeting(x,y,obj_ground);
-    } until(done or tries&gt;50);
-    if(not done) {
-        // not enough space (or bad luck), bail out
-        instance_destroy();
-    }
-}
-
-
-alarm[0] = spawn_time_light;
 </string>
           </argument>
         </arguments>

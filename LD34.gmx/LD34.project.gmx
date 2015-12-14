@@ -68,6 +68,7 @@
       <sprite>sprites\spr_pwr_pistol</sprite>
       <sprite>sprites\spr_pwr_machinespread</sprite>
       <sprite>sprites\spr_pwr_machinehoming</sprite>
+      <sprite>sprites\sprite_light_destroy</sprite>
     </sprites>
     <sprite>sprites\sprite_health</sprite>
     <sprite>sprites\sprite_pickup_light</sprite>
@@ -160,9 +161,11 @@
       <object>objects\obj_powerup_homing</object>
       <object>objects\obj_powerup_machinegun</object>
       <object>objects\obj_pickup_light</object>
-      <object>objects\obj_powerup_controller</object>
+      <object>objects\obj_powerup_light_controller</object>
       <object>objects\obj_powerup_machinespread</object>
       <object>objects\obj_powerup_machinehoming</object>
+      <object>objects\obj_pickup_destroy</object>
+      <object>objects\obj_powerup_weapon_controller</object>
     </objects>
     <object>objects\obj_UI_controller</object>
     <objects name="UI">
@@ -178,6 +181,17 @@
       <object>objects\obj_tree_1</object>
       <object>objects\obj_ghost_stealing</object>
       <object>objects\obj_bat_stealing</object>
+    </objects>
+    <objects name="Environment">
+      <objects name="trees">
+        <object>objects\obj_tree_level__1</object>
+        <object>objects\obj_tree_level_2</object>
+      </objects>
+      <objects name="pillars">
+        <object>objects\obj_pillar_1</object>
+        <object>objects\obj_pillar_2</object>
+        <object>objects\obj_pillar_3</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
