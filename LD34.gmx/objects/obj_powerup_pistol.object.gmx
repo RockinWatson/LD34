@@ -37,6 +37,7 @@ if place_meeting (x,y, obj_player) {
     global.powerup_pistol = true;
     global.present_count +=1;
     global.main_score += 20;
+    audio_play_sound(sound_present_pickup,1, false);
     instance_destroy();
 }
 </string>

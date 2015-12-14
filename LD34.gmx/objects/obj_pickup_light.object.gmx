@@ -61,6 +61,7 @@ if place_meeting (x,y, obj_player) {
     global.health += 1;
     global.spirit_count += 1;
     global.main_score += 30;
+    audio_play_sound(sound_spirit_pickup, 10, false);
     instance_destroy();
 }
 </string>
