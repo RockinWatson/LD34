@@ -50,21 +50,20 @@ random_num = 50
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize();
-if random(random_num) &lt;= 10{
-    instance_create(room_width/2,room_height/2 + 550,obj_ground)
+            <string>if random(random_num) &lt;= 10{
+    instance_create(room_width/2 - 238,room_height/2 + 700,obj_ground)
 }else if random(random_num) &lt;= 20{
-    instance_create(room_width/2,room_height/2 + 550,obj_ground_2)
+    instance_create(room_width/2 - 240,room_height/2 + 700,obj_ground_2)
 }else if random(random_num) &lt;= 30{
-    instance_create(room_width/2,room_height/2 + 550,obj_ground_3)
+    instance_create(room_width/2 - 260,room_height/2 + 700,obj_ground_3)
 }else if random(random_num) &lt;= 40{
-    instance_create(room_width/2,room_height/2 + 550,obj_ground_4)
+    instance_create(room_width/2 - 243,room_height/2 + 700,obj_ground_4)
 }else if random(random_num) &lt;= 50{
-    instance_create(room_width/2,room_height/2 + 550,obj_ground_5)
+    instance_create(room_width/2 - 273,room_height/2 + 700,obj_ground_5)
 }
 
 
-alarm[0] = irandom_range(spawn_time/2,spawn_time);
+alarm[0] = spawn_time;
 </string>
           </argument>
         </arguments>
