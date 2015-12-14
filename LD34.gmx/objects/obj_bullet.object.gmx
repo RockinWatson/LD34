@@ -57,7 +57,7 @@ if (y &lt; 0) || (y &gt; room_height) || (x &lt; 0) || (x &gt; room_width)
 }
 
 //Homing//
-if global.powerup_homing = true
+if (global.powerup_homing = true) || (global.powerup_machinehoming = true)
 {
     if instance_exists (obj_bat)
     {

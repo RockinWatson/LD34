@@ -215,21 +215,44 @@ if (global.powerup_spread == true) and (global.can_shoot == true)
 
 
 
+//Machinegun Spread//
+if (global.powerup_machinespread == true) and (global.can_shoot == true)
+{    
 
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        global.can_shoot = false;
+        alarm [3] = 7;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y);
+            }
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        alarm [3] = 7;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y)+15;
+            }
+        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+        alarm [3] = 7;
+            with (bullet)
+            {
+                direction = point_direction (x, y, mouse_x, mouse_y)-15;
+            }
+}
 
+//Homing Machinegun//
+//Machine Gun//
+if (global.powerup_machinehoming = true) and (global.can_shoot == true)
+{
 
-
-
-
-
-
-
-
-
-
-
-
-
+    bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+    global.can_shoot = false;
+        alarm[3] = 7;
+        with (bullet)
+        {
+            direction = point_direction (x, y, mouse_x, mouse_y);
+        }
+}
 </string>
           </argument>
         </arguments>
