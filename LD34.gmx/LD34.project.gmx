@@ -60,6 +60,7 @@
     <sprite>sprites\sprite_joke_1</sprite>
     <sprites name="Enemies">
       <sprite>sprites\sprite_bat</sprite>
+      <sprite>sprites\sprite_ghost_squid</sprite>
     </sprites>
     <sprites name="Powerups">
       <sprite>sprites\spr_pwr_homing</sprite>
@@ -128,6 +129,9 @@
     </objects>
     <objects name="Enemies">
       <object>objects\obj_bat</object>
+      <object>objects\obj_ghost_squid</object>
+      <object>objects\obj_bat_controller</object>
+      <object>objects\obj_ghost_controller</object>
     </objects>
     <objects name="ground/collisions">
       <object>objects\obj_ground</object>
@@ -195,6 +199,7 @@
         <object>objects\obj_pillar_controller</object>
       </objects>
     </objects>
+    <object>objects\obj_joke_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_test_J</room>

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>surface = surface_create(room_width, room_height);
+            <string>surface = surface_create(room_width*2, room_height*2);
 </string>
           </argument>
         </arguments>
@@ -182,7 +182,7 @@ draw_set_blend_mode (bm_normal);
 surface_reset_target();
     
 
-draw_surface (surface, 0, 0);
+draw_surface(surface, 0, 0);
 </string>
           </argument>
         </arguments>
