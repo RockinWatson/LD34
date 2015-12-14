@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spawn_time = 270;
+            <string>spawn_time = 200;
 alarm[0] = spawn_time;
 random_num = 50
 </string>

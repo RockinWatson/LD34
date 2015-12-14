@@ -50,6 +50,7 @@
         <sprite>sprites\sprite_ground_3</sprite>
         <sprite>sprites\sprite_ground_5</sprite>
         <sprite>sprites\sprt_ground_destroy</sprite>
+        <sprite>sprites\sprite_side_block</sprite>
       </sprites>
       <sprites name="Trees">
         <sprite>sprites\sprite_tree_1</sprite>
@@ -137,6 +138,7 @@
     <objects name="Platform_Controller">
       <object>objects\obj_platform_controller</object>
       <object>objects\obj_ground_destroy</object>
+      <object>objects\obj_side_stop</object>
     </objects>
     <objects name="Lighting">
       <object>objects\obj_torch</object>
