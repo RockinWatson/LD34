@@ -137,9 +137,10 @@
       <object>objects\obj_wall</object>
     </objects>
     <objects name="Platform_Controller">
-      <object>objects\obj_platform_controller</object>
+      <object>objects\obj_platform_controller_left</object>
       <object>objects\obj_ground_destroy</object>
       <object>objects\obj_side_stop</object>
+      <object>objects\obj_plaform_controller_right</object>
     </objects>
     <objects name="Lighting">
       <object>objects\obj_torch</object>
@@ -180,11 +181,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_test_J</room>
     <room>rooms\room_title</room>
     <room>rooms\room_story_1</room>
     <room>rooms\room_story_2</room>
     <room>rooms\room_story_3</room>
-    <room>rooms\room_test_J</room>
     <room>rooms\room_test_S</room>
     <room>rooms\room_J_Move</room>
     <room>rooms\room_test_S_moving</room>
