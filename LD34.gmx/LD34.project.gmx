@@ -27,6 +27,7 @@
       <sprite>sprites\sprite_player_idle</sprite>
       <sprite>sprites\sprite_player_falling</sprite>
       <sprite>sprites\sprite_player_death</sprite>
+      <sprite>sprites\sprite_player_exit_room</sprite>
     </sprites>
     <sprite>sprites\sprite_arm</sprite>
     <sprite>sprites\sprite_wall</sprite>
@@ -91,6 +92,7 @@
     <sprites name="Title Screen">
       <sprite>sprites\sprite_title</sprite>
       <sprite>sprites\sprite_continue</sprite>
+      <sprite>sprites\sprite_thanks</sprite>
     </sprites>
     <sprites name="Story">
       <sprite>sprites\sprite_bat_stealing</sprite>
@@ -126,6 +128,7 @@
       <object>objects\obj_arm</object>
       <object>objects\obj_health</object>
       <object>objects\obj_bullet</object>
+      <object>objects\obj_santaur_exits_room</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_bat</object>
@@ -202,6 +205,7 @@
     <object>objects\obj_joke_controller</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_end</room>
     <room>rooms\room_test_J</room>
     <room>rooms\room_title</room>
     <room>rooms\room_story_1</room>

@@ -67,7 +67,7 @@
     <instance objName="obj_ground_2" x="1001" y="1984" name="inst_EFD16E76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bat" x="529" y="625" name="inst_32E67B3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bat" x="1039" y="1177" name="inst_3E098330" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_powerup_controller" x="3" y="729" name="inst_E52AEBF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="3" y="729" name="inst_E52AEBF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_health" x="12" y="571" name="inst_D8CFF4CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_powerup_spread" x="1080" y="655" name="inst_304A83A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_powerup_homing" x="744" y="901" name="inst_3EDD8102" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

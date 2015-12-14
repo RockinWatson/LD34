@@ -249,6 +249,11 @@ if room == room_story_4{
     draw_sprite(sprite_story_3, sprite_index, 800, 75);
     draw_sprite(sprite_skip, sprite_index, 800, 835);
 }
+
+if room == room_end{
+    draw_sprite(sprite_title, sprite_index, 800, room_height/2-320);
+    draw_sprite(sprite_thanks, sprite_index, 800, 550)
+}
 </string>
           </argument>
         </arguments>

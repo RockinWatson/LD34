@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>x_offset = 2;
 y_offset = -10;
+
+gamepad_set_axis_deadzone(0,0.1)
 </string>
           </argument>
         </arguments>
@@ -144,114 +146,230 @@ y_offset = -10;
             <string>x:= obj_player.x;
 y:= obj_player.y+y_offset;
 
-//Arm and Gun Angle//
-image_angle = point_direction (x,y, mouse_x, mouse_y);
-
-
-//Pistol Shot//
-if (global.can_shoot == true) and (global.powerup_pistol == true)
-{
+/*//Gamepad controls is plugged in
+if gamepad_is_connected(0){
+    //Arm and Gun Angle//
+    image_angle = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//|| point_direction(x,y, mouse_x, mouse_y);
+   
+    //Pistol Shot//
+    if (global.can_shoot == true) and (global.powerup_pistol == true)
+    {
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            global.can_shoot = false;
+            alarm[0] = 45;
+                with (bullet)
+                {
+                    direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
+                }
+    }
+    //Homing Shot//
+    if (global.can_shoot == true) and (global.powerup_homing = true)
+    {
+    
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            global.can_shoot = false;
+            alarm[3] = 25;
+                with (bullet)
+                {
+                    direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
+                }
+    }
+    
+    //Machine Gun//
+    if (global.powerup_machinegun = true) and (global.can_shoot == true)
+    {
+    
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
         global.can_shoot = false;
-        alarm[0] = 45;
+            alarm[3] = 7;
             with (bullet)
             {
-                direction = point_direction (x, y, mouse_x, mouse_y);
+                direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
             }
-}
-
-//Homing Shot//
-if (global.can_shoot == true) and (global.powerup_homing = true)
-{
-
+    }
+    
+    else image_index = 0;
+    
+    //Spread Powerup//
+    if (global.powerup_spread == true) and (global.can_shoot == true)
+    {    
+    
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            global.can_shoot = false;
+            alarm [1] = 45;
+                with (bullet)
+                {
+                    direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
+                }
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            alarm [1] = 45;
+                with (bullet)
+                {
+                    direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
+                }
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            alarm [1] = 45;
+                with (bullet)
+                {
+                    direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
+                }
+    }
+    
+    
+    
+    //Machinegun Spread//
+    if (global.powerup_machinespread == true) and (global.can_shoot == true)
+    {    
+    
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            global.can_shoot = false;
+            alarm [3] = 7;
+                with (bullet)
+                {
+                    direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
+                }
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            alarm [3] = 7;
+                with (bullet)
+                {
+                    direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
+                }
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            alarm [3] = 7;
+                with (bullet)
+                {
+                    direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
+                }
+    }
+    
+    //Homing Machinegun//
+    //Machine Gun//
+    if (global.powerup_machinehoming = true) and (global.can_shoot == true)
+    {
+    
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
         global.can_shoot = false;
-        alarm[3] = 25;
+            alarm[3] = 7;
             with (bullet)
             {
-                direction = point_direction (x, y, mouse_x, mouse_y);
+                direction = point_direction(x,y,x+gamepad_axis_value(0,gp_axisrh), y+gamepad_axis_value(0,gp_axisrv)) //||//||  point_direction(x,y, mouse_x, mouse_y);
             }
-}
-
-//Machine Gun//
-if (global.powerup_machinegun = true) and (global.can_shoot == true)
-{
-
-    bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+    }
+}else{*/
+//Keyboard controls if Gamepad isnt plugged in.
+    //Arm and Gun Angle//
+if obj_player.sprite_index == sprite_player_death{
     global.can_shoot = false;
-        alarm[3] = 7;
-        with (bullet)
-        {
-            direction = point_direction (x, y, mouse_x, mouse_y);
-        }
-}
-
-else image_index = 0;
-
-//Spread Powerup//
-if (global.powerup_spread == true) and (global.can_shoot == true)
-{    
-
+    image_speed = 0;
+}else{
+    image_angle =   point_direction(x,y, mouse_x, mouse_y);
+    
+    
+    //Pistol Shot//
+    if (global.can_shoot == true) and (global.powerup_pistol == true)
+    {
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            global.can_shoot = false;
+            alarm[0] = 45;
+                with (bullet)
+                {
+                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                }
+    }
+    
+    //Homing Shot//
+    if (global.can_shoot == true) and (global.powerup_homing = true)
+    {
+    
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            global.can_shoot = false;
+            alarm[3] = 25;
+                with (bullet)
+                {
+                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                }
+    }
+    
+    //Machine Gun//
+    if (global.powerup_machinegun = true) and (global.can_shoot == true)
+    {
+    
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
         global.can_shoot = false;
-        alarm [1] = 45;
+            alarm[3] = 7;
             with (bullet)
             {
-                direction = point_direction (x, y, mouse_x, mouse_y);
+                direction =   point_direction(x,y, mouse_x, mouse_y);
             }
-        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        alarm [1] = 45;
-            with (bullet)
-            {
-                direction = point_direction (x, y, mouse_x, mouse_y)+15;
-            }
-        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        alarm [1] = 45;
-            with (bullet)
-            {
-                direction = point_direction (x, y, mouse_x, mouse_y)-15;
-            }
-}
-
-
-
-//Machinegun Spread//
-if (global.powerup_machinespread == true) and (global.can_shoot == true)
-{    
-
+    }
+    
+    else image_index = 0;
+    
+    //Spread Powerup//
+    if (global.powerup_spread == true) and (global.can_shoot == true)
+    {    
+    
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            global.can_shoot = false;
+            alarm [1] = 45;
+                with (bullet)
+                {
+                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                }
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            alarm [1] = 45;
+                with (bullet)
+                {
+                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                }
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            alarm [1] = 45;
+                with (bullet)
+                {
+                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                }
+    }
+    
+    
+    
+    //Machinegun Spread//
+    if (global.powerup_machinespread == true) and (global.can_shoot == true)
+    {    
+    
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            global.can_shoot = false;
+            alarm [3] = 7;
+                with (bullet)
+                {
+                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                }
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            alarm [3] = 7;
+                with (bullet)
+                {
+                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                }
+            bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
+            alarm [3] = 7;
+                with (bullet)
+                {
+                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                }
+    }
+    
+    //Homing Machinegun//
+    //Machine Gun//
+    if (global.powerup_machinehoming = true) and (global.can_shoot == true)
+    {
+    
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
         global.can_shoot = false;
-        alarm [3] = 7;
+            alarm[3] = 7;
             with (bullet)
             {
-                direction = point_direction (x, y, mouse_x, mouse_y);
+                direction =   point_direction(x,y, mouse_x, mouse_y);
             }
-        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        alarm [3] = 7;
-            with (bullet)
-            {
-                direction = point_direction (x, y, mouse_x, mouse_y)+15;
-            }
-        bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-        alarm [3] = 7;
-            with (bullet)
-            {
-                direction = point_direction (x, y, mouse_x, mouse_y)-15;
-            }
-}
-
-//Homing Machinegun//
-//Machine Gun//
-if (global.powerup_machinehoming = true) and (global.can_shoot == true)
-{
-
-    bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-    global.can_shoot = false;
-        alarm[3] = 7;
-        with (bullet)
-        {
-            direction = point_direction (x, y, mouse_x, mouse_y);
-        }
+    }
 }
 </string>
           </argument>

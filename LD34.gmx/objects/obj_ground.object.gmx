@@ -3,7 +3,7 @@
   <spriteName>sprite_ground_1</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-400</depth>
   <persistent>0</persistent>
   <parentName>obj_shadow_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
