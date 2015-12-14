@@ -69,7 +69,7 @@
     <instance objName="obj_ground_3" x="663" y="848" name="inst_26C52069" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_powerup_pistol" x="723" y="756" name="inst_2CF20730" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pickup_light" x="592" y="754" name="inst_AF676AC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_plaform_controller_right" x="1094" y="1009" name="inst_AD703A89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_plaform_controller_right" x="879" y="1001" name="inst_AD703A89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
