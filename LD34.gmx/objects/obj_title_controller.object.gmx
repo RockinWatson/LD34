@@ -36,6 +36,12 @@ if room == room_story_1{
 if room == room_story_2{
     alarm [1] = 210
 }
+if room == room_story_3{
+    alarm [1] = 200
+}
+if room == room_story_4{
+    alarm [1] = 330;
+}
 </string>
           </argument>
         </arguments>
@@ -221,18 +227,27 @@ draw_sprite(sprite_title, sprite_index, 800, 600);
 draw_sprite(sprite_continue, sprite_index, 800, 835);
 }
 
-//Story 1
+//Story
 if room == room_story_1{
     draw_sprite(sprite_story_1, sprite_index, 800, 250);
+    draw_sprite(sprite_skip, sprite_index, 800, 835);
 }
 
 if room == room_story_2{
     draw_sprite(sprite_story_1, sprite_index, 800, 250);
     draw_sprite(sprite_story_2, sprite_index, 800, 500);
+    draw_sprite(sprite_skip, sprite_index, 800, 835);
 }
 
 if room == room_story_3{
-    draw_sprite(sprite_house_2, sprite_index, 800, 450);
+    draw_sprite(sprite_house_2, sprite_index, 800, 350);
+    draw_sprite(sprite_skip, sprite_index, 800, 835);
+}
+
+if room == room_story_4{
+    draw_sprite(sprite_cave, sprite_index, 800, 450);
+    draw_sprite(sprite_story_3, sprite_index, 800, 75);
+    draw_sprite(sprite_skip, sprite_index, 800, 835);
 }
 </string>
           </argument>

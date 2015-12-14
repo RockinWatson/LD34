@@ -125,6 +125,11 @@ if (room == room_story_3) and !audio_is_playing(sound_go) and (keyboard_check_pr
     audio_play_sound(sound_go, 20, false);
     instance_create(0,0, obj_fade_controller_skip);
 }
+if (room == room_story_4) and !audio_is_playing(sound_go) and (keyboard_check_pressed(ord('D'))){
+    audio_stop_sound(music_story);
+    audio_play_sound(sound_go, 20, false);
+    instance_create(0,0, obj_fade_controller_skip);
+}
 </string>
           </argument>
         </arguments>
