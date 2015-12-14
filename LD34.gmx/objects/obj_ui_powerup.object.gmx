@@ -29,13 +29,13 @@
     sprite_index = sprite_shot_1;
 }
 if global.powerup_spread == true{
-    sprite_index = sprite_shot_1;
+    sprite_index = sprite_shot_2;
 }
 if global.powerup_homing == true{
-    sprite_index = sprite_shot_3;
+    sprite_index = sprite_shot_4;
 }
 if global.powerup_machinegun == true{
-    sprite_index = sprite_shot_4;
+    sprite_index = sprite_shot_3;
 }
 if global.powerup_machinespread == true{
     sprite_index = sprite_shot_5;

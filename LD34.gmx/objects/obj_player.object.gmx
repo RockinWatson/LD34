@@ -107,6 +107,13 @@ if (place_meeting(x+hsp,y,obj_ground)){
     }
     hsp = 0;
 }
+if (place_meeting(x+hsp,y,obj_pillar_1)){
+    while(!place_meeting(x+sign(hsp),y,obj_pillar_1)){
+        x += sign(hsp);
+        obj_arm.x += sign(hsp)
+    }
+    hsp = 0;
+}
 x += hsp;
  
 //Vertical Collision
@@ -115,6 +122,13 @@ if (vsp &lt; 20){
 } 
 if (place_meeting(x,y+vsp,obj_ground)){
     while(!place_meeting(x,y+sign(vsp),obj_ground)){
+        y += sign(vsp);
+        obj_arm.y += sign(vsp)
+    }
+    vsp = obj_ground.vspeed;
+}
+if (place_meeting(x,y+vsp,obj_pillar_1)){
+    while(!place_meeting(x,y+sign(vsp),obj_pillar_1)){
         y += sign(vsp);
         obj_arm.y += sign(vsp)
     }
@@ -168,7 +182,33 @@ if (vspeed &gt;30){
 if position_meeting(sprite_width, sprite_height-1,obj_ground){
     instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,obj_ground)
     move_outside_solid(90,sprite_height);
+}if position_meeting(sprite_width, sprite_height-1,obj_pillar_1){
+    instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,obj_pillar_1)
+    move_outside_solid(90,sprite_height);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_pillar_1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>y-=2
 </string>
           </argument>
         </arguments>
