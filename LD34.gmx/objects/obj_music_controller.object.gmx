@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-9999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,11 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Initialization//
-torch_audio = 0;
-
-//Opening Music//
-if room == room_test_S{
+            <string>//Opening Music//
+if room == room_title{
     if !audio_is_playing(music_opening){
         audio_stop_sound(music_story);
         audio_stop_sound(music_level);
@@ -38,7 +35,7 @@ if room == room_test_S{
 }
 
 //Story Music//
-if room == room_test_S_2{
+if room == room_story_1{
     audio_stop_sound(music_opening);
     audio_stop_sound(music_level);
     
@@ -48,7 +45,7 @@ if room == room_test_S_2{
 }
 
 //Level Music//
-if room == room_test_S_3{
+if (room == room_test_S){
     audio_stop_sound(music_opening);;
     audio_stop_sound(music_story);    
 
@@ -103,7 +100,7 @@ if room == room_test_S_3{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(room_test_S_2);
+            <string>//room_goto(room_test_S_2);
 </string>
           </argument>
         </arguments>
@@ -127,27 +124,20 @@ if room == room_test_S_3{
           <argument>
             <kind>1</kind>
             <string>//Skip Opening//
-if (room == room_test_S) and !audio_is_playing(sound_super_santaur) and keyboard_check_pressed(ord('D')){
+if (room == room_title) and !audio_is_playing(sound_super_santaur) and keyboard_check_pressed(ord('D')){
     audio_stop_sound(music_opening);
     audio_play_sound(sound_super_santaur, 20, false);
     audio_play_sound(sound_go, 20, false);
-    alarm [0] = 60;
+    instance_create(0,0, obj_fade_controller);
+   // alarm [0] = 60;
 }
 
 //Skip Story//
-if (room == room_test_S_2) and (keyboard_check_pressed(ord('D'))){
+if (room == room_story_1) and (keyboard_check_pressed(ord('D'))){
     audio_stop_sound(music_story);
     audio_play_sound(sound_go, 20, false);
     alarm [1] = 60;
-}
-
-if (global.health &gt;= 10) and (torch_sound == 0){
-    torch_sound = 1;
-    audio_play_sound(sound_full_torch, 10, false);
-}
-
-if (global.health &lt;10){
-    torch_sound = 0;
+    instance_create(0,0, obj_fade_controller);
 }
 </string>
           </argument>

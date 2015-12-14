@@ -30,6 +30,8 @@ global.powerup_pistol = false;
 global.powerup_homing = false;
 global.powerup_spread = false;
 global.powerup_machinegun = false;
+global.powerup_machinespread = false;
+global.powerup_machinehoming = false;
 </string>
           </argument>
         </arguments>

@@ -65,6 +65,8 @@
       <sprite>sprites\spr_pwr_machinegun</sprite>
       <sprite>sprites\spr_pwr_spread</sprite>
       <sprite>sprites\spr_pwr_pistol</sprite>
+      <sprite>sprites\spr_pwr_machinespread</sprite>
+      <sprite>sprites\spr_pwr_machinehoming</sprite>
     </sprites>
     <sprite>sprites\sprite_health</sprite>
     <sprite>sprites\sprite_pickup_light</sprite>
@@ -121,6 +123,8 @@
       <object>objects\obj_lighting</object>
       <object>objects\obj_shadow_controller</object>
       <object>objects\obj_shadow_parent</object>
+      <object>objects\obj_fade_controller</object>
+      <object>objects\obj_fade_in_controller</object>
     </objects>
     <objects name="Test">
       <object>objects\object12</object>
@@ -132,6 +136,8 @@
       <object>objects\obj_powerup_machinegun</object>
       <object>objects\obj_pickup_light</object>
       <object>objects\obj_powerup_controller</object>
+      <object>objects\obj_powerup_machinespread</object>
+      <object>objects\obj_powerup_machinehoming</object>
     </objects>
     <object>objects\obj_UI_controller</object>
     <objects name="UI">
@@ -144,9 +150,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_title</room>
+    <room>rooms\room_story_1</room>
     <room>rooms\room_test_S</room>
-    <room>rooms\room_test_S_2</room>
-    <room>rooms\room_test_S_3</room>
     <room>rooms\room_test_J</room>
     <room>rooms\room_J_Move</room>
     <room>rooms\room_test_S_moving</room>
