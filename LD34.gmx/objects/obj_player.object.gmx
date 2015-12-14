@@ -73,21 +73,29 @@ global.key_right = keyboard_check(ord("D")) || (gamepad_axis_value(0, gp_axislh)
 global.key_left = keyboard_check(ord("A")) || (gamepad_axis_value(0, gp_axislh)&lt;0);
 
 //React to inputs
-move = global.key_right + -global.key_left
-hsp += move * movespeed;
+global.move = global.key_right + -global.key_left
+hsp += global.move * movespeed;
 
-//Friction Right
-if (hsp &gt; 2) and (!global.key_right){
-    hsp -= move_friction;
-    if (hsp &lt;= 2){
-        hsp = 0;
-    }
+//Image Flip
+if (global.move){
+    facing = global.move; 
+    obj_arm.image_yscale = global.move;
+}else if -global.move {
+    facing = -1
+    obj_arm.image_yscale = -1;
 }
-//Friction Left
-if (hsp &lt; -2) and (!global.key_left){
-    hsp += move_friction;
-    if (hsp &gt;= -2){
-        hsp = 0;
+//Animation
+if place_meeting(x, y+1, obj_ground){
+    if global.move!=0 {
+        sprite_index = sprite_player_moving;
+    }else{
+        sprite_index= sprite_player_idle
+    }
+}else{
+    if vsp &gt; 0 {
+        sprite_index = sprite_player_falling 
+    }else{
+        sprite_index = sprite_player_idle
     }
 }
 
@@ -105,7 +113,7 @@ x += hsp;
 if (vsp &lt; 20){
     vsp += 1;
 } 
-if (place_meeting(x,y+vsp,obj_ground) and sprite_index == sprite_player_moving) || (place_meeting(x,y+vsp,obj_ground) and sprite_index == sprite_player_idle){
+if (place_meeting(x,y+vsp,obj_ground)){
     while(!place_meeting(x,y+sign(vsp),obj_ground)){
         y += sign(vsp);
         obj_arm.y += sign(vsp)
@@ -113,6 +121,21 @@ if (place_meeting(x,y+vsp,obj_ground) and sprite_index == sprite_player_moving) 
     vsp = obj_ground.vspeed;
 }
 y += vsp;
+
+//Friction Right
+if (hsp &gt; 2) and (!global.key_right){
+    hsp -= move_friction;
+    if (hsp &lt;= 2){
+        hsp = 0;
+    }
+}
+//Friction Left
+if (hsp &lt; -2) and (!global.key_left){
+    hsp += move_friction;
+    if (hsp &gt;= -2){
+        hsp = 0;
+    }
+}
 
 //Torch Light
 if global.health &lt;=0{
@@ -134,48 +157,18 @@ if instance_exists(obj_torch) &amp;&amp; (facing == 1){
 
 //Speed Limits//
 if (hsp&gt;13.5) or (hsp &lt; -13.5){
-    hsp = move*13.5
+    hsp = global.move*13.5
 }
 if (vspeed &gt;30){
     vspeed = 30;
 }
 
+
 //Take player out of ground 
-if position_meeting (sprite_width, sprite_height-1,obj_ground){
+if position_meeting(sprite_width, sprite_height-1,obj_ground){
     instance_position(x-sprite_xoffset+sprite_width/2,y-sprite_yoffset+sprite_height,obj_ground)
     move_outside_solid(90,sprite_height);
 }
-
-//Image Flip
-if (move){
-    facing = move; 
-    obj_arm.image_yscale = move;
-}else if -move {
-    facing = -1
-    obj_arm.image_yscale = -1;
-}
-
-
-if place_meeting(x,y-1,obj_ground){
-    if global.key_left or global.key_right{
-        sprite_index = sprite_player_moving;
-    }else{
-        sprite_index = sprite_player_idle;
-    }
-}else{
-    if vsp &gt; 0{
-        sprite_index = sprite_player_falling
-    }
-}
-//Running Animation
-/*
-if place_meeting(x, y-3, obj_ground) {
-    if move!= 0 {sprite_index = sprite_player_moving}else{sprite_index = sprite_player_idle}
-}else{
- if vsp &gt; 0 {sprite_index = sprite_player_falling}
-}
-
-
 </string>
           </argument>
         </arguments>

@@ -150,10 +150,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_test_J</room>
     <room>rooms\room_title</room>
     <room>rooms\room_story_1</room>
     <room>rooms\room_test_S</room>
-    <room>rooms\room_test_J</room>
     <room>rooms\room_J_Move</room>
     <room>rooms\room_test_S_moving</room>
     <room>rooms\room_test</room>
