@@ -133,22 +133,22 @@ time_score = true;
 draw_set_font (font_main);
 
 //Draw Timer//
-draw_text_colour(view_xview[0]+ 160, view_yview[0] + 42,round(global.time), c_red, c_red, c_red, c_red, 1);
+draw_text_colour(view_xview[0]+ 250, view_yview[0] + 42,round(global.time), c_red, c_red, c_red, c_red, 1);
 
 //Draw Spirits//
-draw_text_colour(view_xview[0]+ 218, view_yview[0] + 94,global.spirit_count, c_red, c_red, c_red, c_red, 1);
+draw_text_colour(view_xview[0]+ 250, view_yview[0] + 94,global.spirit_count, c_red, c_red, c_red, c_red, 1);
 
 //Draw Kills//
-draw_text_colour(view_xview[0]+ 183, view_yview[0] + 146,global.kill_count, c_red, c_red, c_red, c_red, 1);
+draw_text_colour(view_xview[0]+ 250, view_yview[0] + 146,global.kill_count, c_red, c_red, c_red, c_red, 1);
 
 //Draw Presents//
-draw_text_colour(view_xview[0]+ 274, view_yview[0] + 198,global.present_count, c_red, c_red, c_red, c_red, 1);
+draw_text_colour(view_xview[0]+ 250, view_yview[0] + 198,global.present_count, c_red, c_red, c_red, c_red, 1);
 
 //Draw Score//
-draw_text_colour(view_xview[0]+ 199, view_yview[0] + 291,global.main_score, c_red, c_red, c_red, c_red, 1);
+draw_text_colour(view_xview[0]+ 190, view_yview[0] + 295,global.main_score, c_red, c_red, c_red, c_red, 1);
 
 //Draw High Score//
-draw_text_colour(view_xview[0]+ 199, view_yview[0] + 400,global.main_score, c_red, c_red, c_red, c_red, 1);
+draw_text_colour(view_xview[0]+ 190, view_yview[0] + 405,global.main_score, c_red, c_red, c_red, c_red, 1);
 </string>
           </argument>
         </arguments>

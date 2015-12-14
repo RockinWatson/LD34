@@ -53,8 +53,7 @@
   <instances>
     <instance objName="obj_player" x="481" y="745" name="inst_D8334CE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shadow_controller" x="0" y="704" name="inst_07AE98C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ground" x="350" y="297" name="inst_0DB23BCD" locked="0" code="" scaleX="0.55045872926712" scaleY="13.3000001907349" colour="4278190080" rotation="0"/>
-    <instance objName="obj_ground" x="1268" y="282" name="inst_E7B993E4" locked="0" code="" scaleX="0.680000007152557" scaleY="13.3500003814697" colour="4278190080" rotation="0"/>
+    <instance objName="obj_ground" x="1268" y="280" name="inst_E7B993E4" locked="0" code="" scaleX="0.680000007152557" scaleY="13.3500003814697" colour="4278190080" rotation="0"/>
     <instance objName="obj_ground_destroy" x="784" y="-308" name="inst_1DF7C812" locked="0" code="" scaleX="18.3125" scaleY="0.8125" colour="4294967295" rotation="0"/>
     <instance objName="obj_powerup_controller" x="3" y="729" name="inst_E52AEBF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_health" x="73" y="580" name="inst_D8CFF4CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -68,9 +67,10 @@
     <instance objName="obj_ground_3" x="663" y="848" name="inst_26C52069" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_powerup_pistol" x="723" y="756" name="inst_2CF20730" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pickup_light" x="592" y="754" name="inst_AF676AC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_plaform_controller_right" x="988" y="990" name="inst_AD703A89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform_controller_left" x="538" y="991" name="inst_D9F40033" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ground_3" x="941" y="1050" name="inst_AC9F033D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_plaform_controller_right" x="879" y="1001" name="inst_AD703A89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_sidebar" x="211" y="450" name="inst_63799E38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_sidebar" x="1389" y="450" name="inst_379F3681" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ground" x="332" y="341" name="inst_2A7CF705" locked="0" code="" scaleX="0.680000007152557" scaleY="13.3500003814697" colour="4278190080" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
