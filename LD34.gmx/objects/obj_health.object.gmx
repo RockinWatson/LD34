@@ -92,7 +92,7 @@ if global.health = 9
 {
     image_index = 9;
 }
-if global.health &gt;= 10
+if global.health &gt;= 11
 {
     image_index = 10;
 }

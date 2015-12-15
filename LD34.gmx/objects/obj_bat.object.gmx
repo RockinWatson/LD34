@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>bat_health = 3;
+            <string>bat_health = 2;
 global.bat_dead = false
 </string>
           </argument>
@@ -73,8 +73,9 @@ global.bat_dead = false
           <argument>
             <kind>1</kind>
             <string>//Move Toward Player//
-mp_potential_step (obj_player.x, obj_player.y, 5, true);
+//mp_potential_step(obj_player.x, obj_player.y, 5, true);
 
+move_towards_point (obj_player.x, obj_player.y, 5);
 //Hit Player//
 if place_meeting (x,y, obj_player)
 {
@@ -83,7 +84,7 @@ if place_meeting (x,y, obj_player)
         global.health -=1;
         audio_play_sound(sound_player_hit, 5, false);
         global.invincible = 1;
-        alarm [0] =60;
+        alarm [0] =15;
     }
 }
 </string>

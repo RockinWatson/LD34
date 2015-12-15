@@ -45,12 +45,22 @@ if room == room_story_1{
 }
 
 //Level Music//
-if (room == room_test_S){
+if (room == room_test_J){
     audio_stop_sound(music_opening);;
     audio_stop_sound(music_story);    
 
     if !audio_is_playing(music_level){
         audio_play_sound(music_level, 15, true);
+    }
+}
+
+//End Music//
+if (room == room_end){
+    audio_stop_sound(music_story);
+    audio_stop_sound(music_level);
+    
+    if !audio_is_playing(music_opening){
+        audio_play_sound(music_opening, 15, true);
     }
 }
 

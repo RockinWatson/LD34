@@ -34,7 +34,7 @@ global.powerup_machinespread = false;
 global.powerup_machinehoming = false;
 
 //light variables
-spawn_time_light = 100;
+spawn_time_light = 200;
 alarm[0] = spawn_time_light;
 </string>
           </argument>

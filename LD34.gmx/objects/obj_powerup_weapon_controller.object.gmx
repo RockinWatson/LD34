@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>randomize()
 //weapon variables
-spawn_time_weapon = 50;
+spawn_time_weapon = irandom_range(250, 400);
 alarm[0] = spawn_time_weapon;
 random_num = 60;
 </string>

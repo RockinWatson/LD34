@@ -54,6 +54,8 @@
     <instance objName="obj_music_controller" x="32" y="576" name="inst_81B520F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fade_in_controller" x="64" y="384" name="inst_E6A54C73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_title_controller" x="0" y="512" name="inst_7D9FD6BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_snow_destroy" x="800" y="928" name="inst_B4702826" locked="0" code="" scaleX="56.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_snow_controller" x="384" y="-64" name="inst_D215D692" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

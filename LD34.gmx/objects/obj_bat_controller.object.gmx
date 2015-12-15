@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spawn_time = 150;
+            <string>randomize()
+spawn_time = irandom_range(375,550);
 alarm[0] = spawn_time;
 </string>
           </argument>

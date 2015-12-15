@@ -270,7 +270,7 @@ if obj_player.sprite_index == sprite_player_death{
     {
             bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
             global.can_shoot = false;
-            alarm[0] = 45;
+            alarm[0] = 35;
                 with (bullet)
                 {
                     direction =   point_direction(x,y, mouse_x, mouse_y);
@@ -283,7 +283,7 @@ if obj_player.sprite_index == sprite_player_death{
     
             bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
             global.can_shoot = false;
-            alarm[3] = 25;
+            alarm[3] = 22;
                 with (bullet)
                 {
                     direction =   point_direction(x,y, mouse_x, mouse_y);
@@ -291,7 +291,7 @@ if obj_player.sprite_index == sprite_player_death{
     }
     
     //Machine Gun//
-    if (global.powerup_machinegun = true) and (global.can_shoot == true)
+    if (global.powerup_machinegun == true) and (global.can_shoot == true)
     {
     
         bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
@@ -311,22 +311,22 @@ if obj_player.sprite_index == sprite_player_death{
     
             bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
             global.can_shoot = false;
-            alarm [1] = 45;
+            alarm [1] = 35;
                 with (bullet)
                 {
                     direction =   point_direction(x,y, mouse_x, mouse_y);
                 }
             bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-            alarm [1] = 45;
+            alarm [1] = 35;
                 with (bullet)
                 {
-                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                    direction =   point_direction(x,y, mouse_x, mouse_y)+15;
                 }
             bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
-            alarm [1] = 45;
+            alarm [1] = 35;
                 with (bullet)
                 {
-                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                    direction =   point_direction(x,y, mouse_x, mouse_y)-15;
                 }
     }
     
@@ -347,13 +347,13 @@ if obj_player.sprite_index == sprite_player_death{
             alarm [3] = 7;
                 with (bullet)
                 {
-                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                    direction =   point_direction(x,y, mouse_x, mouse_y)+15;
                 }
             bullet = instance_create(x+lengthdir_x(15, image_angle), y+lengthdir_y(15, image_angle),obj_bullet);
             alarm [3] = 7;
                 with (bullet)
                 {
-                    direction =   point_direction(x,y, mouse_x, mouse_y);
+                    direction =   point_direction(x,y, mouse_x, mouse_y)-15;
                 }
     }
     
